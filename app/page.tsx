@@ -60,7 +60,7 @@ export default function Home() {
         ) : (
           <div
             aria-disabled="true"
-            className="flex w-full items-center justify-center rounded-xl2 bg-slate-200 px-6 py-5 text-center text-lg font-bold text-slate-500"
+            className="flex w-full items-center justify-center rounded-xl2 bg-slate-200 px-6 py-5 text-center text-lg font-bold text-slate-700"
           >
             Choose both places to start
           </div>
@@ -93,7 +93,7 @@ function ChoiceCard({
         {emoji}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-sm font-semibold uppercase tracking-wide text-slate-500">
+        <span className="block text-sm font-semibold uppercase tracking-wide text-slate-600">
           {slot}
         </span>
         {choice ? (

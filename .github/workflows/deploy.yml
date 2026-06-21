@@ -1,0 +1,53 @@
+# ============================================================================
+#  Auto-deploy SISD Wayfinder to GitHub Pages.
+#  Every time you push to the "main" branch, GitHub builds the app and publishes
+#  it. You get a public link you can share or turn into a QR code — exactly the
+#  no-login / no-install way the Duty Map is shared.
+#
+#  ONE-TIME SETUP (do this once, in the browser):
+#    Repo → Settings → Pages → "Build and deployment" → Source: GitHub Actions.
+#  After that, just push and it updates itself.
+# ============================================================================
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # lets you trigger a deploy by hand from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time; let an in-progress run finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build # also runs the room generator first
+      # GitHub Pages ignores folders starting with "_" unless this file exists.
+      - run: touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -94,7 +94,7 @@ export default function Picker({ slot }: { slot: Slot }) {
           if (!items || items.length === 0) return null;
           return (
             <section key={key} className="mb-5">
-              <h2 className="px-1 pb-2 pt-1 text-sm font-bold uppercase tracking-wide text-slate-500">
+              <h2 className="px-1 pb-2 pt-1 text-sm font-bold uppercase tracking-wide text-slate-600">
                 {label}
               </h2>
               <ul className="flex flex-col gap-2">
