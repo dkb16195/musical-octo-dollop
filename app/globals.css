@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+/* Calm, readable defaults for young / anxious readers. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: theme("colors.paper");
+  color: theme("colors.ink");
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+  /* respect the phone's notch / home bar */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Make focus rings obvious for keyboard / switch-access users (WCAG). */
+:focus-visible {
+  outline: 3px solid theme("colors.sky.brand");
+  outline-offset: 2px;
+}
+
+/* Gentler motion for anyone who prefers reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

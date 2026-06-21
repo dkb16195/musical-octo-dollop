@@ -1,0 +1,13 @@
+# dependencies
+/node_modules
+# next.js build output
+/.next/
+/out/
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+# the full school export is optional & may contain staff data — keep it local
+/data/sisd.yaml
+next-env.d.ts

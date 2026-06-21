@@ -1,0 +1,382 @@
+[
+  {
+    "id": "001 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "002 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "003 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "004 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "005 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "006 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "007 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "008 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "009 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "010 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "011 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "014 - Science Lab",
+    "type": "science_lab"
+  },
+  {
+    "id": "103",
+    "type": "classroom"
+  },
+  {
+    "id": "104",
+    "type": "classroom"
+  },
+  {
+    "id": "105",
+    "type": "classroom"
+  },
+  {
+    "id": "106",
+    "type": "classroom"
+  },
+  {
+    "id": "107",
+    "type": "classroom"
+  },
+  {
+    "id": "108",
+    "type": "classroom"
+  },
+  {
+    "id": "109",
+    "type": "classroom"
+  },
+  {
+    "id": "111",
+    "type": "classroom"
+  },
+  {
+    "id": "112",
+    "type": "classroom"
+  },
+  {
+    "id": "113",
+    "type": "classroom"
+  },
+  {
+    "id": "114",
+    "type": "classroom"
+  },
+  {
+    "id": "115",
+    "type": "classroom"
+  },
+  {
+    "id": "116",
+    "type": "classroom"
+  },
+  {
+    "id": "117",
+    "type": "classroom"
+  },
+  {
+    "id": "118 - Inclusion",
+    "type": "support_room"
+  },
+  {
+    "id": "124",
+    "type": "classroom"
+  },
+  {
+    "id": "125",
+    "type": "classroom"
+  },
+  {
+    "id": "126",
+    "type": "classroom"
+  },
+  {
+    "id": "132 - Drama Studio",
+    "type": "drama"
+  },
+  {
+    "id": "133 - PY Music Studio",
+    "type": "music"
+  },
+  {
+    "id": "202",
+    "type": "classroom"
+  },
+  {
+    "id": "203",
+    "type": "classroom"
+  },
+  {
+    "id": "204",
+    "type": "classroom"
+  },
+  {
+    "id": "205",
+    "type": "classroom"
+  },
+  {
+    "id": "206",
+    "type": "classroom"
+  },
+  {
+    "id": "207",
+    "type": "classroom"
+  },
+  {
+    "id": "209",
+    "type": "classroom"
+  },
+  {
+    "id": "211",
+    "type": "classroom"
+  },
+  {
+    "id": "212",
+    "type": "classroom"
+  },
+  {
+    "id": "213",
+    "type": "classroom"
+  },
+  {
+    "id": "216",
+    "type": "classroom"
+  },
+  {
+    "id": "217",
+    "type": "classroom"
+  },
+  {
+    "id": "218",
+    "type": "classroom"
+  },
+  {
+    "id": "220 - Music Room 2",
+    "type": "music"
+  },
+  {
+    "id": "221 - Music Room 1",
+    "type": "music"
+  },
+  {
+    "id": "222",
+    "type": "classroom"
+  },
+  {
+    "id": "223",
+    "type": "classroom"
+  },
+  {
+    "id": "224 - MPR",
+    "type": "classroom"
+  },
+  {
+    "id": "231 - MPR",
+    "type": "classroom"
+  },
+  {
+    "id": "232 - MPR",
+    "type": "classroom"
+  },
+  {
+    "id": "233",
+    "type": "classroom"
+  },
+  {
+    "id": "234",
+    "type": "classroom"
+  },
+  {
+    "id": "302",
+    "type": "classroom"
+  },
+  {
+    "id": "303",
+    "type": "classroom"
+  },
+  {
+    "id": "304",
+    "type": "classroom"
+  },
+  {
+    "id": "305",
+    "type": "classroom"
+  },
+  {
+    "id": "306",
+    "type": "classroom"
+  },
+  {
+    "id": "307",
+    "type": "classroom"
+  },
+  {
+    "id": "308",
+    "type": "classroom"
+  },
+  {
+    "id": "309",
+    "type": "classroom"
+  },
+  {
+    "id": "310",
+    "type": "classroom"
+  },
+  {
+    "id": "311",
+    "type": "classroom"
+  },
+  {
+    "id": "312",
+    "type": "classroom"
+  },
+  {
+    "id": "313",
+    "type": "classroom"
+  },
+  {
+    "id": "314",
+    "type": "classroom"
+  },
+  {
+    "id": "319 - Art",
+    "type": "art"
+  },
+  {
+    "id": "320 - Art",
+    "type": "art"
+  },
+  {
+    "id": "321 - Design Room",
+    "type": "design_workshop"
+  },
+  {
+    "id": "322 IT Lab (L)",
+    "type": "it_lab"
+  },
+  {
+    "id": "323 IT Lab",
+    "type": "it_lab"
+  },
+  {
+    "id": "324 - Design Room",
+    "type": "design_workshop"
+  },
+  {
+    "id": "325 - Design Room",
+    "type": "design_workshop"
+  },
+  {
+    "id": "328 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "329 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "330 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "332 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "333",
+    "type": "classroom"
+  },
+  {
+    "id": "334 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "335 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "336 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "337 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "338 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "339 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "340 - Bridge",
+    "type": "classroom"
+  },
+  {
+    "id": "AUDITORIUM",
+    "type": "drama"
+  },
+  {
+    "id": "Activity Room 2",
+    "type": "classroom"
+  },
+  {
+    "id": "Dance Studio",
+    "type": "pe_space"
+  },
+  {
+    "id": "FIELD1",
+    "type": "pe_space"
+  },
+  {
+    "id": "FIELD2",
+    "type": "pe_space"
+  },
+  {
+    "id": "SH2",
+    "type": "pe_space"
+  },
+  {
+    "id": "SH3",
+    "type": "pe_space"
+  },
+  {
+    "id": "Sports Hall 1",
+    "type": "pe_space"
+  },
+  {
+    "id": "Sports Hall 2",
+    "type": "pe_space"
+  }
+]
