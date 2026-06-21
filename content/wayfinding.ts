@@ -42,6 +42,9 @@ export type Connection = {
   photo: string;       // a photo file inside /public/photos, e.g. "atrium-stairs.jpg"
   instruction: string; // what to do going FROM → TO, e.g. "Walk to the big stairs."
   reverse: string;     // what to do coming back TO → FROM (powers "reverse route")
+  alt?: string;        // OPTIONAL: describes the photo for screen-readers /
+                       // blind users. If you leave it out, the instruction is
+                       // used. Adding a real description is kinder & more accessible.
 };
 
 // ============================================================================
@@ -110,7 +113,108 @@ export const nodes: MapNode[] = [
 //  finds the full route by joining hops together.
 // ============================================================================
 export const connections: Connection[] = [
-  // (Phase 3 will seed 2–3 complete example routes here.)
+  // ----------------------------------------------------------------------
+  //  HOW TO READ THIS LIST
+  //  Each line is ONE short hop between two neighbouring points. You only
+  //  describe neighbours — the app joins hops into full routes by itself.
+  //  Photos live in /public/photos. The example photos below are coloured
+  //  placeholders: replace each file with a REAL photo of that spot
+  //  (keep the same file name, or change the "photo:" value to your name).
+  // ----------------------------------------------------------------------
+
+  // --- Shared backbone: entrance, atrium, stairs between floors ---
+  {
+    from: "entrance", to: "atrium_g",
+    photo: "entrance-to-atrium.jpg",
+    instruction: "Go through the main doors into the big atrium.",
+    reverse: "Walk to the main doors to go outside.",
+    alt: "The main school entrance doors leading into the ground floor atrium.",
+  },
+  {
+    from: "atrium_g", to: "stairs_g",
+    photo: "atrium-to-stairs.jpg",
+    instruction: "Walk across the atrium to the big main stairs.",
+    reverse: "Walk back across the atrium.",
+    alt: "The ground floor atrium with the main staircase ahead.",
+  },
+  {
+    from: "atrium_g", to: "canteen",
+    photo: "atrium-to-canteen.jpg",
+    instruction: "Turn right and walk to the canteen.",
+    reverse: "Leave the canteen and walk back to the atrium.",
+    alt: "A corridor from the atrium leading to the canteen.",
+  },
+  {
+    from: "stairs_g", to: "stairs_1",
+    photo: "stairs-g-to-1.jpg",
+    instruction: "Go up the stairs to the first floor.",
+    reverse: "Go down the stairs to the ground floor.",
+    alt: "Staircase going up from the ground floor to the first floor.",
+  },
+  {
+    from: "stairs_1", to: "atrium_1",
+    photo: "stairs-1-to-atrium.jpg",
+    instruction: "Step off the stairs into the first floor atrium.",
+    reverse: "Walk back to the first floor stairs.",
+    alt: "The first floor landing opening into the first floor atrium.",
+  },
+  {
+    from: "stairs_1", to: "stairs_2",
+    photo: "stairs-1-to-2.jpg",
+    instruction: "Keep going up the stairs to the second floor.",
+    reverse: "Go down the stairs to the first floor.",
+    alt: "Staircase continuing up to the second floor.",
+  },
+  {
+    from: "stairs_2", to: "atrium_2",
+    photo: "stairs-2-to-atrium.jpg",
+    instruction: "Step off the stairs into the second floor atrium.",
+    reverse: "Walk back to the second floor stairs.",
+    alt: "The second floor landing opening into the second floor atrium.",
+  },
+  {
+    from: "stairs_2", to: "stairs_3",
+    photo: "stairs-2-to-3.jpg",
+    instruction: "Keep going up the stairs to the third floor.",
+    reverse: "Go down the stairs to the second floor.",
+    alt: "Staircase continuing up to the third floor.",
+  },
+  {
+    from: "stairs_3", to: "atrium_3",
+    photo: "stairs-3-to-atrium.jpg",
+    instruction: "Step off the stairs into the third floor atrium.",
+    reverse: "Walk back to the third floor stairs.",
+    alt: "The third floor landing opening into the third floor atrium.",
+  },
+
+  // --- EXAMPLE ROUTE 1: Main Entrance → Science Lab 001 (ground floor) ---
+  {
+    from: "atrium_g", to: "room_001_science_lab",
+    photo: "atrium-to-lab001.jpg",
+    instruction: "Walk past the stairs to Science Lab 001 on your left.",
+    reverse: "Leave the lab and walk back to the atrium.",
+    alt: "Ground floor corridor leading to the door of Science Lab 001.",
+  },
+
+  // --- EXAMPLE ROUTE 2: anywhere → Room 103 (first floor) ---
+  {
+    from: "atrium_1", to: "room_103",
+    photo: "atrium1-to-103.jpg",
+    instruction: "Walk along the first floor to Room 103.",
+    reverse: "Leave Room 103 and walk back to the atrium.",
+    alt: "First floor corridor with the door to Room 103.",
+  },
+
+  // --- EXAMPLE ROUTE 3: anywhere → Room 305 (third floor) ---
+  {
+    from: "atrium_3", to: "room_305",
+    photo: "atrium3-to-305.jpg",
+    instruction: "Walk along the third floor to Room 305.",
+    reverse: "Leave Room 305 and walk back to the atrium.",
+    alt: "Third floor corridor with the door to Room 305.",
+  },
+
+  // ➕ ADD YOUR OWN HOPS BELOW using the same pattern.
 ];
 
 // ============================================================================
