@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#14161c" />
+<title>Perked · Card Benefits Tracker</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: { fontFamily: {
+      sans: ['-apple-system','BlinkMacSystemFont','SF Pro Text','Segoe UI','Roboto','Helvetica','Arial','sans-serif'],
+    } } },
+  };
+</script>
+<style>
+  html, body, #root { min-height:100%; }
+  html, body { background:#f2f2f7; -webkit-font-smoothing:antialiased; }
+  * { -webkit-tap-highlight-color: transparent; }
+  .metal {
+    background:
+      radial-gradient(120% 140% at 0% 0%, rgba(255,255,255,.14), rgba(255,255,255,0) 45%),
+      radial-gradient(120% 140% at 100% 100%, rgba(120,140,180,.18), rgba(0,0,0,0) 50%),
+      linear-gradient(135deg, #1c1f27 0%, #2a2f3a 38%, #14161c 100%);
+    box-shadow: 0 24px 60px -20px rgba(10,12,20,.7), inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .sheen { background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.10) 47%, rgba(255,255,255,.02) 53%, transparent 70%); }
+  .fade-in { animation: fade .28s ease both; }
+  @keyframes fade { from { opacity:0; transform: translateY(4px);} to {opacity:1; transform:none;} }
+  .pop { animation: pop .22s cubic-bezier(.2,.9,.3,1.3) both; }
+  @keyframes pop { 0%{transform:scale(.6);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb { background:#d0d0d6; border-radius:8px; }
+  .no-scrollbar::-webkit-scrollbar{ display:none; }
+  .spin { animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
