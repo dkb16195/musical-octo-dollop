@@ -116,9 +116,9 @@ The app is published as a plain static website on **GitHub Pages**.
 1. Go to the repo on GitHub → **Settings → Pages**.
 2. Under **Build and deployment → Source**, choose **GitHub Actions**.
 
-**After that:** every time changes land on the `main` branch, it rebuilds and
-republishes itself automatically (via `.github/workflows/deploy.yml`). Your live
-link will be:
+**After that:** every time changes are pushed to the Wayfinder branch
+(`claude/sisd-wayfinder-app-x5nf3q`), it rebuilds and republishes itself
+automatically (via `.github/workflows/deploy.yml`). Your live link will be:
 
 ```
 https://<your-username>.github.io/musical-octo-dollop/
