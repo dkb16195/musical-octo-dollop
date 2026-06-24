@@ -62,6 +62,17 @@ export const TEMPLATES = [
   { name:'Blue Cash Preferred', issuer:'Amex', color:'ocean', fee:95, resetType:'calendar', benefits:[
     B('Disney Bundle Credit', 7, 'monthly', '$7/mo statement credit'),
   ]},
+  // UAE card — amounts are in AED (app currently renders a "$" glyph for all cards).
+  { name:'Skywards Infinite', issuer:'Emirates NBD', color:'rose', fee:1575, resetType:'anniversary', benefits:[
+    B('Complimentary valet parking', 120, 'monthly', '4 free valet/mo at select malls, 1 hr each (AED 30 after). AED value est.'),
+    B('Complimentary golf round', 250, 'monthly', 'Up to 2 rounds/mo at top UAE courses · AED 30/booking · needs AED 5,000 spend that month. AED est.'),
+    B('Airport lounge access', 0, 'perk', 'Unlimited — you + 1 guest at 1,000+ lounges via Visa Airport Companion'),
+    B('Emirates Skywards Silver status', 0, 'perk', 'Complimentary while the card is active (lounge access + extra baggage)'),
+    B('Multi-trip travel insurance', 0, 'perk', 'You + family, trips up to 90 days'),
+    B('Airport transfers (Careem)', 0, 'perk', 'Free airport drop via concierge desk · 50% off Careem rides'),
+    B('Rotana Rewards membership', 0, 'perk', 'Complimentary Exclusive Club membership'),
+    B('Welcome bonus miles', 0, 'perk', 'Up to 100,000 Skywards Miles (incl. 25,000 on USD 7,500 Emirates spend in year 1)'),
+  ]},
   { name:'Custom card', issuer:'', color:'plum', fee:0, resetType:'calendar', benefits:[] },
 ];
 export const newBenefit = () => B('New benefit', 0, 'monthly', '');
