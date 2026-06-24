@@ -26,9 +26,23 @@ export type Location = {
   name: string;    // the friendly name a student reads, e.g. "Canteen"
   type: LocationType;
   icon: string;    // an emoji shown in the list, e.g. "🍽️"
+  building: BuildingId; // which building it's in (see BUILDINGS below)
   floor: string;   // "G", "1", "2", "3", or "X" for outdoor / sports
   node: string;    // which NODE (below) this place sits at
 };
+
+// The campus has separate buildings. The picker groups places by Building →
+// Floor so students aren't shown three different "Room 305"s in one list.
+export type BuildingId =
+  | "secondary" | "auditorium" | "bridge" | "sports" | "other";
+
+export const BUILDINGS: { id: BuildingId; name: string }[] = [
+  { id: "secondary", name: "Secondary Building" },
+  { id: "auditorium", name: "Auditorium Building" },
+  { id: "bridge", name: "Bridge Wing (New Classrooms)" },
+  { id: "sports", name: "Sports & Outdoor" },
+  { id: "other", name: "Other" },
+];
 
 export type MapNode = {
   id: string;      // a unique code, e.g. "atrium_g"
@@ -56,25 +70,29 @@ export type Connection = {
 //      floor: "G", node: "my_place" },
 // ============================================================================
 export const landmarks: Location[] = [
-  // --- Ground floor ---
-  { id: "entrance",   name: "Main Entrance",        type: "entrance", icon: "🚪", floor: "G", node: "entrance" },
-  { id: "atrium_g",   name: "Ground Floor Atrium",  type: "landmark", icon: "🏛️", floor: "G", node: "atrium_g" },
-  { id: "stairs_g",   name: "Main Stairs (Ground)", type: "landmark", icon: "🪜", floor: "G", node: "stairs_g" },
-  { id: "canteen",    name: "Canteen",              type: "canteen",  icon: "🍽️", floor: "G", node: "canteen" },
-  { id: "grabgo_g",   name: "Grab & Go (Ground)",   type: "canteen",  icon: "🥪", floor: "G", node: "grabgo_g" },
-  // --- First floor ---
-  { id: "atrium_1",   name: "First Floor Atrium",   type: "landmark", icon: "1️⃣", floor: "1", node: "atrium_1" },
-  { id: "bridge_1",   name: "First Floor Bridge",   type: "landmark", icon: "🌉", floor: "1", node: "bridge_1" },
-  // --- Second floor ---
-  { id: "atrium_2",   name: "Second Floor Atrium",  type: "landmark", icon: "2️⃣", floor: "2", node: "atrium_2" },
-  // --- Third floor ---
-  { id: "atrium_3",   name: "Third Floor Atrium",   type: "landmark", icon: "3️⃣", floor: "3", node: "atrium_3" },
-  // --- Outdoor / sports ---
-  { id: "courtyard",  name: "Courtyard",            type: "landmark", icon: "🌳", floor: "X", node: "courtyard" },
+  // === SECONDARY BUILDING ===
+  { id: "reception",    name: "Reception / Main Entrance", type: "entrance", icon: "🚪", building: "secondary", floor: "G", node: "reception" },
+  { id: "courtyard",    name: "Central Courtyard / Stadium", type: "landmark", icon: "🏟️", building: "secondary", floor: "G", node: "courtyard" },
+  { id: "wc_sec_g",     name: "Toilets — Secondary (Ground)", type: "toilet", icon: "🚻", building: "secondary", floor: "G", node: "wc_sec_g" },
+  { id: "wc_sec_1",     name: "Toilets — Secondary (First)",  type: "toilet", icon: "🚻", building: "secondary", floor: "1", node: "wc_sec_1" },
+  { id: "wc_sec_2",     name: "Toilets — Secondary (Second)", type: "toilet", icon: "🚻", building: "secondary", floor: "2", node: "wc_sec_2" },
+  { id: "wc_sec_3",     name: "Toilets — Secondary (Third)",  type: "toilet", icon: "🚻", building: "secondary", floor: "3", node: "wc_sec_3" },
 
-  // EXAMPLES TO FILL IN LATER (uncomment and adjust when you have them):
-  // { id: "toilets_g", name: "Toilets (Ground)", type: "toilet",  icon: "🚻", floor: "G", node: "toilets_g" },
-  // { id: "library",   name: "Library",          type: "library", icon: "📚", floor: "1", node: "library" },
+  // === AUDITORIUM BUILDING ===
+  { id: "canteen",      name: "New Canteen (Grab & Go)", type: "canteen", icon: "🍽️", building: "auditorium", floor: "1", node: "canteen" },
+  { id: "parent_cafe",  name: "Parent Café",            type: "canteen",  icon: "☕", building: "auditorium", floor: "1", node: "parent_cafe" },
+  { id: "auditorium",   name: "Auditorium",             type: "landmark", icon: "🎭", building: "auditorium", floor: "1", node: "auditorium" },
+  { id: "lib_primary",  name: "Primary Library",        type: "library",  icon: "📚", building: "auditorium", floor: "2", node: "lib_primary" },
+  { id: "lib_secondary",name: "Secondary Library",      type: "library",  icon: "📚", building: "auditorium", floor: "2", node: "lib_secondary" },
+  { id: "art_display",  name: "Art Display Open Area",   type: "landmark", icon: "🖼️", building: "auditorium", floor: "3", node: "art_display" },
+  { id: "wc_aud_1",     name: "Toilets — Auditorium (First)", type: "toilet", icon: "🚻", building: "auditorium", floor: "1", node: "wc_aud_1" },
+  { id: "wc_aud_3",     name: "Toilets — Auditorium (Third)", type: "toilet", icon: "🚻", building: "auditorium", floor: "3", node: "wc_aud_3" },
+
+  // === BRIDGE WING ===
+  { id: "wc_bridge_3",  name: "Toilets — Bridge (Third)", type: "toilet", icon: "🚻", building: "bridge", floor: "3", node: "wc_bridge_3" },
+
+  // ➕ Add more landmarks with the same pattern. Remember to also add a matching
+  //    NODE below, then connect it to its neighbours in CONNECTIONS.
 ];
 
 // ============================================================================
@@ -84,19 +102,37 @@ export const landmarks: Location[] = [
 //  RULE: every landmark's "node" value must appear here.
 // ============================================================================
 export const nodes: MapNode[] = [
-  { id: "entrance",  name: "Main Entrance",        floor: "G" },
-  { id: "atrium_g",  name: "Ground Floor Atrium",  floor: "G" },
-  { id: "stairs_g",  name: "Main Stairs (Ground)", floor: "G" },
-  { id: "canteen",   name: "Canteen",              floor: "G" },
-  { id: "grabgo_g",  name: "Grab & Go (Ground)",   floor: "G" },
-  { id: "stairs_1",  name: "Main Stairs (First)",  floor: "1" },
-  { id: "atrium_1",  name: "First Floor Atrium",   floor: "1" },
-  { id: "bridge_1",  name: "First Floor Bridge",   floor: "1" },
-  { id: "stairs_2",  name: "Main Stairs (Second)", floor: "2" },
-  { id: "atrium_2",  name: "Second Floor Atrium",  floor: "2" },
-  { id: "stairs_3",  name: "Main Stairs (Third)",  floor: "3" },
-  { id: "atrium_3",  name: "Third Floor Atrium",   floor: "3" },
-  { id: "courtyard", name: "Courtyard",            floor: "X" },
+  // --- Secondary Building: landmarks + stair core (one node per floor) ---
+  { id: "reception",    name: "Reception / Main Entrance",   floor: "G" },
+  { id: "courtyard",    name: "Central Courtyard / Stadium", floor: "G" },
+  { id: "wc_sec_g",     name: "Toilets — Secondary (Ground)", floor: "G" },
+  { id: "wc_sec_1",     name: "Toilets — Secondary (First)",  floor: "1" },
+  { id: "wc_sec_2",     name: "Toilets — Secondary (Second)", floor: "2" },
+  { id: "wc_sec_3",     name: "Toilets — Secondary (Third)",  floor: "3" },
+  { id: "stairs_sec_g", name: "Secondary Stairs (Ground)",   floor: "G" },
+  { id: "stairs_sec_1", name: "Secondary Stairs (First)",    floor: "1" },
+  { id: "stairs_sec_2", name: "Secondary Stairs (Second)",   floor: "2" },
+  { id: "stairs_sec_3", name: "Secondary Stairs (Third)",    floor: "3" },
+
+  // --- Auditorium Building: landmarks + stair core + lift ---
+  { id: "canteen",      name: "New Canteen (Grab & Go)",     floor: "1" },
+  { id: "parent_cafe",  name: "Parent Café",                 floor: "1" },
+  { id: "auditorium",   name: "Auditorium",                  floor: "1" },
+  { id: "lib_primary",  name: "Primary Library",             floor: "2" },
+  { id: "lib_secondary",name: "Secondary Library",           floor: "2" },
+  { id: "art_display",  name: "Art Display Open Area",        floor: "3" },
+  { id: "wc_aud_1",     name: "Toilets — Auditorium (First)", floor: "1" },
+  { id: "wc_aud_3",     name: "Toilets — Auditorium (Third)", floor: "3" },
+  { id: "stairs_aud_1", name: "Auditorium Stairs (First)",   floor: "1" },
+  { id: "stairs_aud_2", name: "Auditorium Stairs (Second)",  floor: "2" },
+  { id: "stairs_aud_3", name: "Auditorium Stairs (Third)",   floor: "3" },
+
+  // --- Bridge Wing ---
+  { id: "wc_bridge_3",  name: "Toilets — Bridge (Third)",     floor: "3" },
+  { id: "stairs_bridge_3", name: "Bridge Stairs (Third)",     floor: "3" },
+
+  // NOTE: Phase B adds the corridor links between rooms and these stairs, plus
+  // the links BETWEEN buildings, once the school confirms where they join.
 ];
 
 // ============================================================================
@@ -117,101 +153,43 @@ export const connections: Connection[] = [
   //  HOW TO READ THIS LIST
   //  Each line is ONE short hop between two neighbouring points. You only
   //  describe neighbours — the app joins hops into full routes by itself.
-  //  Photos live in /public/photos. The example photos below are coloured
-  //  placeholders: replace each file with a REAL photo of that spot
-  //  (keep the same file name, or change the "photo:" value to your name).
+  //  Photos live in /public/photos and are coloured PLACEHOLDERS for now.
+  //
+  //  These are example hops INSIDE one building, built from the real plans.
+  //  The full set of corridor links, vertical stairs, and the links BETWEEN
+  //  buildings are added in Phase B once the building connections are confirmed.
   // ----------------------------------------------------------------------
 
-  // --- Shared backbone: entrance, atrium, stairs between floors ---
+  // --- EXAMPLE A: Reception → Room 103 (Secondary, up to the first floor) ---
   {
-    from: "entrance", to: "atrium_g",
-    photo: "entrance-to-atrium.jpg",
-    instruction: "Go through the main doors into the big atrium.",
-    reverse: "Walk to the main doors to go outside.",
-    alt: "The main school entrance doors leading into the ground floor atrium.",
+    from: "reception", to: "stairs_sec_g",
+    photo: "reception-to-stairs.jpg",
+    instruction: "From Reception, walk ahead to the main stairs.",
+    reverse: "Walk back to Reception and the main doors.",
+    alt: "The reception area with the Secondary Building stairs ahead.",
   },
   {
-    from: "atrium_g", to: "stairs_g",
-    photo: "atrium-to-stairs.jpg",
-    instruction: "Walk across the atrium to the big main stairs.",
-    reverse: "Walk back across the atrium.",
-    alt: "The ground floor atrium with the main staircase ahead.",
-  },
-  {
-    from: "atrium_g", to: "canteen",
-    photo: "atrium-to-canteen.jpg",
-    instruction: "Turn right and walk to the canteen.",
-    reverse: "Leave the canteen and walk back to the atrium.",
-    alt: "A corridor from the atrium leading to the canteen.",
-  },
-  {
-    from: "stairs_g", to: "stairs_1",
-    photo: "stairs-g-to-1.jpg",
+    from: "stairs_sec_g", to: "stairs_sec_1",
+    photo: "sec-stairs-g-1.jpg",
     instruction: "Go up the stairs to the first floor.",
     reverse: "Go down the stairs to the ground floor.",
-    alt: "Staircase going up from the ground floor to the first floor.",
+    alt: "Stairs going up from the ground floor to the first floor.",
   },
   {
-    from: "stairs_1", to: "atrium_1",
-    photo: "stairs-1-to-atrium.jpg",
-    instruction: "Step off the stairs into the first floor atrium.",
-    reverse: "Walk back to the first floor stairs.",
-    alt: "The first floor landing opening into the first floor atrium.",
-  },
-  {
-    from: "stairs_1", to: "stairs_2",
-    photo: "stairs-1-to-2.jpg",
-    instruction: "Keep going up the stairs to the second floor.",
-    reverse: "Go down the stairs to the first floor.",
-    alt: "Staircase continuing up to the second floor.",
-  },
-  {
-    from: "stairs_2", to: "atrium_2",
-    photo: "stairs-2-to-atrium.jpg",
-    instruction: "Step off the stairs into the second floor atrium.",
-    reverse: "Walk back to the second floor stairs.",
-    alt: "The second floor landing opening into the second floor atrium.",
-  },
-  {
-    from: "stairs_2", to: "stairs_3",
-    photo: "stairs-2-to-3.jpg",
-    instruction: "Keep going up the stairs to the third floor.",
-    reverse: "Go down the stairs to the second floor.",
-    alt: "Staircase continuing up to the third floor.",
-  },
-  {
-    from: "stairs_3", to: "atrium_3",
-    photo: "stairs-3-to-atrium.jpg",
-    instruction: "Step off the stairs into the third floor atrium.",
-    reverse: "Walk back to the third floor stairs.",
-    alt: "The third floor landing opening into the third floor atrium.",
-  },
-
-  // --- EXAMPLE ROUTE 1: Main Entrance → Science Lab 001 (ground floor) ---
-  {
-    from: "atrium_g", to: "room_001_science_lab",
-    photo: "atrium-to-lab001.jpg",
-    instruction: "Walk past the stairs to Science Lab 001 on your left.",
-    reverse: "Leave the lab and walk back to the atrium.",
-    alt: "Ground floor corridor leading to the door of Science Lab 001.",
-  },
-
-  // --- EXAMPLE ROUTE 2: anywhere → Room 103 (first floor) ---
-  {
-    from: "atrium_1", to: "room_103",
-    photo: "atrium1-to-103.jpg",
-    instruction: "Walk along the first floor to Room 103.",
-    reverse: "Leave Room 103 and walk back to the atrium.",
+    from: "stairs_sec_1", to: "room_103",
+    photo: "sec-1-to-103.jpg",
+    instruction: "At the top, walk along to Room 103.",
+    reverse: "Walk back along to the stairs.",
     alt: "First floor corridor with the door to Room 103.",
   },
 
-  // --- EXAMPLE ROUTE 3: anywhere → Room 305 (third floor) ---
+  // --- EXAMPLE B: New Canteen → Auditorium (same floor) ---
   {
-    from: "atrium_3", to: "room_305",
-    photo: "atrium3-to-305.jpg",
-    instruction: "Walk along the third floor to Room 305.",
-    reverse: "Leave Room 305 and walk back to the atrium.",
-    alt: "Third floor corridor with the door to Room 305.",
+    from: "canteen", to: "auditorium",
+    photo: "canteen-to-auditorium.jpg",
+    instruction: "From the canteen, walk across to the Auditorium doors.",
+    reverse: "Leave the Auditorium and walk back to the canteen.",
+    alt: "The first floor area between the New Canteen and the Auditorium.",
   },
 
   // ➕ ADD YOUR OWN HOPS BELOW using the same pattern.

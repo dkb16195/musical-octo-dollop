@@ -10,6 +10,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 001",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_001_science_lab"
   },
@@ -18,6 +19,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 002",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_002_science_lab"
   },
@@ -26,6 +28,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 003",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_003_science_lab"
   },
@@ -34,6 +37,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 004",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_004_science_lab"
   },
@@ -42,6 +46,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 005",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_005_science_lab"
   },
@@ -50,6 +55,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 006",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_006_science_lab"
   },
@@ -58,6 +64,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 007",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_007_science_lab"
   },
@@ -66,6 +73,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 008",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_008_science_lab"
   },
@@ -74,6 +82,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 009",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_009_science_lab"
   },
@@ -82,6 +91,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 010",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_010_science_lab"
   },
@@ -90,6 +100,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 011",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_011_science_lab"
   },
@@ -98,6 +109,7 @@ export const generatedRooms: Location[] = [
     "name": "Science Lab 014",
     "type": "lab",
     "icon": "🔬",
+    "building": "secondary",
     "floor": "G",
     "node": "room_014_science_lab"
   },
@@ -106,6 +118,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 103",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_103"
   },
@@ -114,6 +127,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 104",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_104"
   },
@@ -122,6 +136,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 105",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_105"
   },
@@ -130,6 +145,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 106",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_106"
   },
@@ -138,6 +154,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 107",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_107"
   },
@@ -146,6 +163,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 108",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_108"
   },
@@ -154,6 +172,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 109",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_109"
   },
@@ -162,6 +181,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 111",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_111"
   },
@@ -170,6 +190,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 112",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_112"
   },
@@ -178,6 +199,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 113",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_113"
   },
@@ -186,6 +208,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 114",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_114"
   },
@@ -194,6 +217,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 115",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_115"
   },
@@ -202,6 +226,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 116",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_116"
   },
@@ -210,6 +235,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 117",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_117"
   },
@@ -218,6 +244,7 @@ export const generatedRooms: Location[] = [
     "name": "Inclusion 118",
     "type": "support",
     "icon": "🤝",
+    "building": "secondary",
     "floor": "1",
     "node": "room_118_inclusion"
   },
@@ -226,6 +253,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 124",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "1",
     "node": "room_124"
   },
@@ -234,6 +262,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 125",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "1",
     "node": "room_125"
   },
@@ -242,6 +271,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 126",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "1",
     "node": "room_126"
   },
@@ -250,6 +280,7 @@ export const generatedRooms: Location[] = [
     "name": "Drama Studio 132",
     "type": "drama",
     "icon": "🎭",
+    "building": "auditorium",
     "floor": "1",
     "node": "room_132_drama_studio"
   },
@@ -258,6 +289,7 @@ export const generatedRooms: Location[] = [
     "name": "PY Music Studio 133",
     "type": "music",
     "icon": "🎵",
+    "building": "auditorium",
     "floor": "1",
     "node": "room_133_py_music_studio"
   },
@@ -266,6 +298,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 202",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_202"
   },
@@ -274,6 +307,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 203",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_203"
   },
@@ -282,6 +316,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 204",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_204"
   },
@@ -290,6 +325,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 205",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_205"
   },
@@ -298,6 +334,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 206",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_206"
   },
@@ -306,6 +343,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 207",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_207"
   },
@@ -314,6 +352,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 209",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_209"
   },
@@ -322,6 +361,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 211",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_211"
   },
@@ -330,6 +370,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 212",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_212"
   },
@@ -338,6 +379,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 213",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_213"
   },
@@ -346,6 +388,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 216",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_216"
   },
@@ -354,6 +397,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 217",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_217"
   },
@@ -362,6 +406,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 218",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_218"
   },
@@ -370,6 +415,7 @@ export const generatedRooms: Location[] = [
     "name": "Music Room 2 220",
     "type": "music",
     "icon": "🎵",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_220_music_room_2"
   },
@@ -378,6 +424,7 @@ export const generatedRooms: Location[] = [
     "name": "Music Room 1 221",
     "type": "music",
     "icon": "🎵",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_221_music_room_1"
   },
@@ -386,6 +433,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 222",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_222"
   },
@@ -394,6 +442,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 223",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_223"
   },
@@ -402,6 +451,7 @@ export const generatedRooms: Location[] = [
     "name": "MPR 224",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_224_mpr"
   },
@@ -410,6 +460,7 @@ export const generatedRooms: Location[] = [
     "name": "MPR 231",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_231_mpr"
   },
@@ -418,6 +469,7 @@ export const generatedRooms: Location[] = [
     "name": "MPR 232",
     "type": "classroom",
     "icon": "📘",
+    "building": "auditorium",
     "floor": "2",
     "node": "room_232_mpr"
   },
@@ -426,6 +478,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 233",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_233"
   },
@@ -434,6 +487,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 234",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "2",
     "node": "room_234"
   },
@@ -442,6 +496,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 302",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_302"
   },
@@ -450,6 +505,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 303",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_303"
   },
@@ -458,6 +514,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 304",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_304"
   },
@@ -466,6 +523,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 305",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_305"
   },
@@ -474,6 +532,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 306",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_306"
   },
@@ -482,6 +541,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 307",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_307"
   },
@@ -490,6 +550,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 308",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_308"
   },
@@ -498,6 +559,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 309",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_309"
   },
@@ -506,6 +568,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 310",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_310"
   },
@@ -514,6 +577,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 311",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_311"
   },
@@ -522,6 +586,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 312",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_312"
   },
@@ -530,6 +595,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 313",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_313"
   },
@@ -538,6 +604,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 314",
     "type": "classroom",
     "icon": "📘",
+    "building": "secondary",
     "floor": "3",
     "node": "room_314"
   },
@@ -546,6 +613,7 @@ export const generatedRooms: Location[] = [
     "name": "Art 319",
     "type": "art",
     "icon": "🎨",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_319_art"
   },
@@ -554,6 +622,7 @@ export const generatedRooms: Location[] = [
     "name": "Art 320",
     "type": "art",
     "icon": "🎨",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_320_art"
   },
@@ -562,6 +631,7 @@ export const generatedRooms: Location[] = [
     "name": "Design Room 321",
     "type": "design",
     "icon": "🛠️",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_321_design_room"
   },
@@ -570,6 +640,7 @@ export const generatedRooms: Location[] = [
     "name": "IT Lab (L) 322",
     "type": "lab",
     "icon": "💻",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_322_it_lab_l"
   },
@@ -578,6 +649,7 @@ export const generatedRooms: Location[] = [
     "name": "IT Lab 323",
     "type": "lab",
     "icon": "💻",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_323_it_lab"
   },
@@ -586,6 +658,7 @@ export const generatedRooms: Location[] = [
     "name": "Design Room 324",
     "type": "design",
     "icon": "🛠️",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_324_design_room"
   },
@@ -594,6 +667,7 @@ export const generatedRooms: Location[] = [
     "name": "Design Room 325",
     "type": "design",
     "icon": "🛠️",
+    "building": "auditorium",
     "floor": "3",
     "node": "room_325_design_room"
   },
@@ -602,6 +676,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 328",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_328_bridge"
   },
@@ -610,6 +685,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 329",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_329_bridge"
   },
@@ -618,6 +694,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 330",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_330_bridge"
   },
@@ -626,6 +703,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 332",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_332_bridge"
   },
@@ -634,6 +712,7 @@ export const generatedRooms: Location[] = [
     "name": "Room 333",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_333"
   },
@@ -642,6 +721,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 334",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_334_bridge"
   },
@@ -650,6 +730,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 335",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_335_bridge"
   },
@@ -658,6 +739,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 336",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_336_bridge"
   },
@@ -666,6 +748,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 337",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_337_bridge"
   },
@@ -674,6 +757,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 338",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_338_bridge"
   },
@@ -682,6 +766,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 339",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_339_bridge"
   },
@@ -690,6 +775,7 @@ export const generatedRooms: Location[] = [
     "name": "Bridge 340",
     "type": "classroom",
     "icon": "📘",
+    "building": "bridge",
     "floor": "3",
     "node": "room_340_bridge"
   },
@@ -698,7 +784,8 @@ export const generatedRooms: Location[] = [
     "name": "AUDITORIUM",
     "type": "drama",
     "icon": "🎭",
-    "floor": "3",
+    "building": "auditorium",
+    "floor": "2",
     "node": "room_auditorium"
   },
   {
@@ -706,6 +793,7 @@ export const generatedRooms: Location[] = [
     "name": "Activity Room 2",
     "type": "classroom",
     "icon": "📘",
+    "building": "other",
     "floor": "X",
     "node": "room_activity_room_2"
   },
@@ -714,6 +802,7 @@ export const generatedRooms: Location[] = [
     "name": "Dance Studio",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_dance_studio"
   },
@@ -722,6 +811,7 @@ export const generatedRooms: Location[] = [
     "name": "FIELD1",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_field1"
   },
@@ -730,6 +820,7 @@ export const generatedRooms: Location[] = [
     "name": "FIELD2",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_field2"
   },
@@ -738,6 +829,7 @@ export const generatedRooms: Location[] = [
     "name": "SH2",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_sh2"
   },
@@ -746,6 +838,7 @@ export const generatedRooms: Location[] = [
     "name": "SH3",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_sh3"
   },
@@ -754,6 +847,7 @@ export const generatedRooms: Location[] = [
     "name": "Sports Hall 1",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_sports_hall_1"
   },
@@ -762,6 +856,7 @@ export const generatedRooms: Location[] = [
     "name": "Sports Hall 2",
     "type": "sports",
     "icon": "🏀",
+    "building": "sports",
     "floor": "X",
     "node": "room_sports_hall_2"
   }

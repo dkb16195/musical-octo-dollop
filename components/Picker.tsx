@@ -6,7 +6,7 @@
  */
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { allLocations, type Location } from "@/content/wayfinding";
+import { allLocations, BUILDINGS, type Location } from "@/content/wayfinding";
 import { setChoiceId, type Slot } from "@/lib/store";
 
 // The floors, in order, with the words a student reads.
@@ -37,13 +37,14 @@ export default function Picker({ slot }: { slot: Slot }) {
     );
   }, [query]);
 
-  // Group the matches by floor so the list is easy to scan.
-  const byFloor = useMemo(() => {
-    const map = new Map<string, Location[]>();
+  // Group the matches by Building → Floor so the list is easy to scan.
+  const byBuildingFloor = useMemo(() => {
+    const map = new Map<string, Location[]>(); // key = `${building}|${floor}`
     for (const l of matches) {
-      const arr = map.get(l.floor) ?? [];
+      const key = `${l.building}|${l.floor}`;
+      const arr = map.get(key) ?? [];
       arr.push(l);
-      map.set(l.floor, arr);
+      map.set(key, arr);
     }
     for (const arr of map.values())
       arr.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
@@ -89,31 +90,45 @@ export default function Picker({ slot }: { slot: Slot }) {
           </p>
         )}
 
-        {FLOORS.map(({ key, label }) => {
-          const items = byFloor.get(key);
-          if (!items || items.length === 0) return null;
+        {BUILDINGS.map((building) => {
+          // Does this building have any matches on any floor?
+          const hasAny = FLOORS.some(
+            (f) => (byBuildingFloor.get(`${building.id}|${f.key}`)?.length ?? 0) > 0,
+          );
+          if (!hasAny) return null;
           return (
-            <section key={key} className="mb-5">
-              <h2 className="px-1 pb-2 pt-1 text-sm font-bold uppercase tracking-wide text-slate-600">
-                {label}
+            <section key={building.id} className="mb-6">
+              <h2 className="sticky top-[8.5rem] z-[1] -mx-1 mb-1 rounded-lg bg-paper/95 px-2 py-1.5 text-base font-extrabold text-navy backdrop-blur">
+                {building.name}
               </h2>
-              <ul className="flex flex-col gap-2">
-                {items.map((l) => (
-                  <li key={l.id}>
-                    <button
-                      onClick={() => choose(l.id)}
-                      className="flex w-full items-center gap-4 rounded-xl2 bg-white p-4 text-left shadow-sm ring-1 ring-slate-200 active:scale-[0.99]"
-                    >
-                      <span aria-hidden className="text-3xl">
-                        {l.icon}
-                      </span>
-                      <span className="text-xl font-bold text-navy">
-                        {l.name}
-                      </span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              {FLOORS.map((f) => {
+                const items = byBuildingFloor.get(`${building.id}|${f.key}`);
+                if (!items || items.length === 0) return null;
+                return (
+                  <div key={f.key} className="mb-3">
+                    <h3 className="px-1 pb-1.5 pt-1 text-sm font-bold uppercase tracking-wide text-slate-600">
+                      {f.label}
+                    </h3>
+                    <ul className="flex flex-col gap-2">
+                      {items.map((l) => (
+                        <li key={l.id}>
+                          <button
+                            onClick={() => choose(l.id)}
+                            className="flex w-full items-center gap-4 rounded-xl2 bg-white p-4 text-left shadow-sm ring-1 ring-slate-200 active:scale-[0.99]"
+                          >
+                            <span aria-hidden className="text-3xl">
+                              {l.icon}
+                            </span>
+                            <span className="text-xl font-bold text-navy">
+                              {l.name}
+                            </span>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
             </section>
           );
         })}

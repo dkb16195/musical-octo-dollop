@@ -39,8 +39,30 @@ function floorOf(id) {
   const m = String(id).match(/^\s*(\d)/);
   if (m) return { "0": "G", "1": "1", "2": "2", "3": "3" }[m[1]] ?? "G";
   const up = String(id).toUpperCase();
-  if (up.includes("AUDITORIUM")) return "3";
+  if (up.includes("AUDITORIUM")) return "2";
   return "X"; // FIELD1, Sports Hall, Dance Studio... = outdoor / sports
+}
+
+// Work out which BUILDING a room is in, from the real floor plans.
+// Most rooms follow their number range; a few ranges cross to the Auditorium
+// building (music, art, design) or the new Bridge wing. Verified against the
+// schematic plans the school provided.
+function buildingOf(id) {
+  const m = String(id).match(/^\s*0*(\d{1,3})/);
+  const up = String(id).toUpperCase();
+  if (up.includes("AUDITORIUM")) return "auditorium";
+  if (/FIELD|SH\d|SPORTS HALL|DANCE/.test(up)) return "sports";
+  if (!m) return "other"; // e.g. "Activity Room 2"
+  const n = Number(m[1]);
+  if (n >= 1 && n <= 14) return "secondary"; // Science labs, ground floor
+  if (n >= 103 && n <= 124) return "secondary";
+  if (n === 125 || n === 126 || n === 132 || n === 133) return "auditorium";
+  if ((n >= 202 && n <= 218) || n === 233 || n === 234) return "secondary";
+  if ((n >= 219 && n <= 232) || n === 235) return "auditorium";
+  if (n >= 302 && n <= 314) return "secondary";
+  if (n >= 319 && n <= 327) return "auditorium";
+  if (n >= 328 && n <= 340) return "bridge";
+  return "other";
 }
 
 // Make a friendly display name, e.g. "001 - Science Lab" -> "Science Lab 001".
@@ -79,6 +101,7 @@ const locations = rooms.map((r) => {
     name: friendly(id),
     type: WTYPE[t] ?? "classroom",
     icon: ICON[t] ?? "📘",
+    building: buildingOf(id),
     floor: floorOf(id),
     node: nodeId(id),
   };
