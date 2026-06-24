@@ -1,0 +1,35 @@
+{
+  "secondary-ground": {
+    "title": "Ground Floor",
+    "subtitle": "Secondary Building",
+    "cols": 7,
+    "rowH": 100,
+    "cells": [
+      { "c": 0, "r": 0, "label": "IT Dept", "sub": "Reception", "kind": "office", "node": "reception" },
+      { "c": 1, "r": 0, "label": "001", "sub": "Science Lab", "kind": "room", "roomId": "001 - Science Lab" },
+      { "c": 2, "r": 0, "label": "002", "sub": "Science Lab", "kind": "room", "roomId": "002 - Science Lab" },
+      { "c": 3, "r": 0, "label": "003", "sub": "Science Lab", "kind": "room", "roomId": "003 - Science Lab" },
+      { "c": 4, "r": 0, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_g" },
+      { "c": 5, "r": 0, "label": "004", "sub": "Science Lab", "kind": "room", "roomId": "004 - Science Lab" },
+      { "c": 6, "r": 0, "label": "005", "sub": "Science Lab", "kind": "room", "roomId": "005 - Science Lab" },
+
+      { "c": 0, "r": 1, "label": "EXIT", "kind": "exit" },
+      { "c": 1, "r": 1, "cs": 3, "rs": 2, "label": "Central Courtyard", "sub": "Grand Stadium (stepped seating)", "kind": "open", "node": "courtyard" },
+      { "c": 4, "r": 1, "label": "014", "sub": "Computer Lab", "kind": "room", "roomId": "014 - Science Lab" },
+      { "c": 5, "r": 1, "label": "Science Offices", "kind": "office" },
+      { "c": 6, "r": 1, "rs": 2, "label": "006", "sub": "Science Lab", "kind": "room", "roomId": "006 - Science Lab" },
+
+      { "c": 0, "r": 2, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_g" },
+      { "c": 4, "r": 2, "label": "013", "kind": "room" },
+      { "c": 5, "r": 2, "label": "Labs Prep", "kind": "office" },
+
+      { "c": 0, "r": 3, "label": "011", "sub": "Science Lab", "kind": "room", "roomId": "011 - Science Lab" },
+      { "c": 1, "r": 3, "label": "010", "sub": "Science Lab", "kind": "room", "roomId": "010 - Science Lab" },
+      { "c": 2, "r": 3, "label": "009", "sub": "Science Lab", "kind": "room", "roomId": "009 - Science Lab" },
+      { "c": 3, "r": 3, "label": "Stairs", "kind": "stairs" },
+      { "c": 4, "r": 3, "label": "008", "sub": "Science Lab", "kind": "room", "roomId": "008 - Science Lab" },
+      { "c": 5, "r": 3, "label": "007", "sub": "Science Lab", "kind": "room", "roomId": "007 - Science Lab" },
+      { "c": 6, "r": 3, "label": "012", "kind": "room" }
+    ]
+  }
+}
