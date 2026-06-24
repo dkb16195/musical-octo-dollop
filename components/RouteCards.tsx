@@ -106,13 +106,25 @@ export default function RouteCards({
             aria-label={`Step ${i + 1} of ${total}`}
           >
             <div className="flex flex-1 flex-col overflow-hidden rounded-xl2 bg-white shadow-md ring-1 ring-slate-200">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${BASE}/photos/${s.photo}`}
-                alt={s.alt}
-                className="h-0 w-full flex-1 object-cover"
-                loading={i <= 1 ? "eager" : "lazy"}
-              />
+              {s.photo ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={`${BASE}/photos/${s.photo}`}
+                  alt={s.alt}
+                  className="h-0 w-full flex-1 object-cover"
+                  loading={i <= 1 ? "eager" : "lazy"}
+                />
+              ) : (
+                /* No photo yet — show a calm placeholder with a big arrow */
+                <div className="flex h-0 w-full flex-1 flex-col items-center justify-center gap-3 bg-gradient-to-br from-sky-50 to-slate-100 text-navy">
+                  <span aria-hidden className="text-7xl">
+                    🚶
+                  </span>
+                  <span className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                    Step {i + 1}
+                  </span>
+                </div>
+              )}
               <p className="px-5 py-5 text-center text-2xl font-extrabold leading-snug text-navy">
                 {s.instruction}
               </p>

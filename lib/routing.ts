@@ -12,11 +12,12 @@
 import {
   allLocations,
   connections,
+  FLOOR_STAIR,
   type Connection,
 } from "@/content/wayfinding";
 
 export type Step = {
-  photo: string;
+  photo?: string; // optional — when missing, the app shows an instruction card
   instruction: string;
   alt: string;
   toName: string; // the point this step arrives at (for the progress label)
@@ -46,9 +47,32 @@ function buildGraph(): Map<string, Edge[]> {
     arr.push(e);
     g.set(from, arr);
   };
+
+  // 1) Hand-written connections come FIRST, so when a photo hop and an
+  //    automatic corridor hop cover the same pair, the photo one wins.
+  const covered = new Set<string>();
   for (const c of connections) {
     add(c.from, { to: c.to, conn: c, forward: true });
     add(c.to, { to: c.from, conn: c, forward: false });
+    covered.add(`${c.from}|${c.to}`);
+    covered.add(`${c.to}|${c.from}`);
+  }
+
+  // 2) Automatic corridor links: connect every room/landmark to the stairs on
+  //    its floor, so the app can route anywhere without a hop hand-written for
+  //    every room. These have no photo (a tidy instruction card is shown).
+  for (const loc of allLocations) {
+    const stair = FLOOR_STAIR[loc.building]?.[loc.floor];
+    if (!stair || stair === loc.node) continue;
+    if (covered.has(`${loc.node}|${stair}`)) continue;
+    const conn: Connection = {
+      from: loc.node,
+      to: stair,
+      instruction: "Go to the stairs on this floor.",
+      reverse: `Walk along the corridor to ${loc.name}.`,
+    };
+    add(loc.node, { to: stair, conn, forward: true });
+    add(stair, { to: loc.node, conn, forward: false });
   }
   return g;
 }

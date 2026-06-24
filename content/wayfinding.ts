@@ -44,6 +44,16 @@ export const BUILDINGS: { id: BuildingId; name: string }[] = [
   { id: "other", name: "Other" },
 ];
 
+// The main stairs node on each floor of each building. The app automatically
+// links every room/landmark to the stairs on its floor, so you don't have to
+// hand-write a hop for every single room — you only add PHOTO hops for the bits
+// you want to show off. (Edit this only if your stair layout changes.)
+export const FLOOR_STAIR: Record<string, Record<string, string>> = {
+  secondary:  { G: "stairs_sec_g", "1": "stairs_sec_1", "2": "stairs_sec_2", "3": "stairs_sec_3" },
+  auditorium: { "1": "stairs_aud_1", "2": "stairs_aud_2", "3": "stairs_aud_3" },
+  bridge:     { "3": "stairs_bridge_3" },
+};
+
 export type MapNode = {
   id: string;      // a unique code, e.g. "atrium_g"
   name: string;    // a human label, e.g. "Ground Floor Atrium"
@@ -53,7 +63,9 @@ export type MapNode = {
 export type Connection = {
   from: string;        // a node id
   to: string;          // a node id (the NEXT point along the way)
-  photo: string;       // a photo file inside /public/photos, e.g. "atrium-stairs.jpg"
+  photo?: string;      // OPTIONAL photo file inside /public/photos. If you haven't
+                       // taken the photo yet, leave it out — the app shows a tidy
+                       // instruction card instead of a broken image.
   instruction: string; // what to do going FROM → TO, e.g. "Walk to the big stairs."
   reverse: string;     // what to do coming back TO → FROM (powers "reverse route")
   alt?: string;        // OPTIONAL: describes the photo for screen-readers /
@@ -191,6 +203,35 @@ export const connections: Connection[] = [
     reverse: "Leave the Auditorium and walk back to the canteen.",
     alt: "The first floor area between the New Canteen and the Auditorium.",
   },
+
+  // ======================================================================
+  //  STRUCTURAL LINKS — these join the floors and the two buildings together
+  //  so the app can route ANYWHERE. They have no photos yet (the app shows a
+  //  tidy instruction card). Add a `photo:` to any of them when you have one.
+  //  (Built from the school's floor plans + the confirmed building links.)
+  // ======================================================================
+
+  // --- Secondary Building: stairs between floors ---
+  { from: "stairs_sec_g", to: "stairs_sec_1", instruction: "Go up the stairs to the first floor.", reverse: "Go down the stairs to the ground floor." },
+  { from: "stairs_sec_1", to: "stairs_sec_2", instruction: "Go up the stairs to the second floor.", reverse: "Go down the stairs to the first floor." },
+  { from: "stairs_sec_2", to: "stairs_sec_3", instruction: "Go up the stairs to the third floor.", reverse: "Go down the stairs to the second floor." },
+
+  // --- Auditorium Building: stairs between floors (entered on the first floor) ---
+  { from: "stairs_aud_1", to: "stairs_aud_2", instruction: "Go up the stairs to the second floor.", reverse: "Go down the stairs to the first floor." },
+  { from: "stairs_aud_2", to: "stairs_aud_3", instruction: "Go up the stairs to the third floor.", reverse: "Go down the stairs to the second floor." },
+
+  // --- GROUND FLOOR crossing: go outside and in through the canteen doors ---
+  { from: "courtyard", to: "canteen", instruction: "Go outside and cross to the canteen doors in the next building.", reverse: "Leave the canteen, go outside and cross back to the main building." },
+
+  // --- FIRST FLOOR bridge: links the two buildings ---
+  { from: "stairs_sec_1", to: "stairs_aud_1", instruction: "Cross the first floor bridge to the Auditorium Building.", reverse: "Cross the first floor bridge back to the main building." },
+
+  // --- SECOND FLOOR bridge: past the staff room / libraries ---
+  { from: "stairs_sec_2", to: "stairs_aud_2", instruction: "Cross the second floor bridge (past the staff room) to the libraries.", reverse: "Cross the second floor bridge back to the main building." },
+
+  // --- THIRD FLOOR: the Bridge wing classrooms link both buildings ---
+  { from: "stairs_sec_3", to: "stairs_bridge_3", instruction: "Walk onto the third floor bridge classrooms.", reverse: "Walk back off the bridge to the main building." },
+  { from: "stairs_bridge_3", to: "stairs_aud_3", instruction: "Carry on across the bridge to the Auditorium Building.", reverse: "Walk back across the bridge." },
 
   // ➕ ADD YOUR OWN HOPS BELOW using the same pattern.
 ];
