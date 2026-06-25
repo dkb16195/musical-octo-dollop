@@ -58,9 +58,11 @@ function wrap(text: string, cellW: number, fontSize: number): string[] {
 export default function FloorPlan({
   floorKey,
   highlight = [],
+  path = [],
 }: {
   floorKey: string;
   highlight?: string[]; // location ids and/or node ids to highlight
+  path?: { x: number; y: number; label: string; kind: "start" | "end" | "via" }[];
 }) {
   const floor = FLOORS[floorKey];
   if (!floor) return null;
@@ -139,6 +141,28 @@ export default function FloorPlan({
           </g>
         );
       })}
+
+      {/* route path through this floor */}
+      {path.length > 0 && (
+        <g>
+          <polyline
+            points={path.map((p) => `${p.x},${p.y}`).join(" ")}
+            fill="none" stroke="#0b2545" strokeWidth="7"
+            strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 14"
+            opacity="0.9"
+          />
+          {path.map((p, i) => (
+            <g key={i}>
+              <circle cx={p.x} cy={p.y} r={p.kind === "via" ? 12 : 16}
+                      fill={p.kind === "start" ? "#16a34a" : p.kind === "end" ? "#dc2626" : "#0b2545"}
+                      stroke="#fff" strokeWidth="3" />
+              <text x={p.x} y={p.y + 5} textAnchor="middle" fontSize="14" fontWeight="800" fill="#fff">
+                {p.label}
+              </text>
+            </g>
+          ))}
+        </g>
+      )}
 
       {/* compass */}
       {floor.compass && (

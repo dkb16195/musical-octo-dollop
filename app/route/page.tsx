@@ -10,8 +10,10 @@ import Link from "next/link";
 import { getChoiceId } from "@/lib/store";
 import { findRoute, type RouteResult } from "@/lib/routing";
 import RouteCards from "@/components/RouteCards";
+import RouteMap from "@/components/RouteMap";
 
 export default function RoutePage() {
+  const [view, setView] = useState<"steps" | "map">("steps");
   const [state, setState] = useState<{
     fromId: string | null;
     toId: string | null;
@@ -49,6 +51,12 @@ export default function RoutePage() {
     );
   }
 
+  if (view === "map") {
+    return (
+      <RouteMap nodes={result.nodes} toName={result.toName} view={view} setView={setView} />
+    );
+  }
+
   return (
     <RouteCards
       steps={result.steps}
@@ -56,6 +64,8 @@ export default function RoutePage() {
       toId={toId}
       fromName={result.fromName}
       toName={result.toName}
+      view={view}
+      setView={setView}
     />
   );
 }

@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { BASE } from "@/lib/paths";
 import { setChoiceId, findLocation } from "@/lib/store";
 import { floorKeyForLocation } from "@/lib/floors";
+import ViewToggle from "@/components/ViewToggle";
 import type { Step } from "@/lib/routing";
 
 export default function RouteCards({
@@ -19,12 +20,16 @@ export default function RouteCards({
   toId,
   fromName,
   toName,
+  view,
+  setView,
 }: {
   steps: Step[];
   fromId: string;
   toId: string;
   fromName: string;
   toName: string;
+  view: "steps" | "map";
+  setView: (v: "steps" | "map") => void;
 }) {
   const router = useRouter();
   const scroller = useRef<HTMLDivElement>(null);
@@ -75,10 +80,11 @@ export default function RouteCards({
           >
             ←
           </button>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <div className="truncate text-sm text-sky-100">Going to</div>
             <div className="truncate text-lg font-extrabold">{toName}</div>
           </div>
+          <ViewToggle view={view} setView={setView} />
         </div>
         {/* Progress: "Step 2 of 5" + dots */}
         <div className="mt-3">

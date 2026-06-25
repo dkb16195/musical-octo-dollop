@@ -5,13 +5,28 @@
  * Once both are chosen, the "Find my way!" button lights up.
  */
 import Link from "next/link";
-import { useChoice } from "@/lib/store";
+import { useRouter } from "next/navigation";
+import { useChoice, setChoiceId } from "@/lib/store";
+import { findNearest } from "@/lib/routing";
 import type { Location } from "@/content/wayfinding";
 
 export default function Home() {
+  const router = useRouter();
   const from = useChoice("from");
   const to = useChoice("to");
   const ready = Boolean(from && to);
+
+  // "Find nearest" — needs to know where you are, then routes to the closest one.
+  function goNearest(type: string, niceName: string) {
+    if (!from) return;
+    const id = findNearest(from.id, type);
+    if (!id) {
+      alert(`Sorry, I couldn't find a ${niceName} on the map near you yet.`);
+      return;
+    }
+    setChoiceId("to", id);
+    router.push("/route");
+  }
 
   return (
     <main className="mx-auto flex min-h-screen max-w-screen-sm flex-col px-5 pb-10">
@@ -48,6 +63,20 @@ export default function Home() {
         />
       </div>
 
+      {/* Quick "find nearest" — appears once you've said where you are */}
+      {from && (
+        <div className="mt-5">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-600">
+            Or quickly find the nearest…
+          </p>
+          <div className="grid grid-cols-3 gap-3">
+            <NearBtn emoji="🚻" label="Toilet" onClick={() => goNearest("toilet", "toilet")} />
+            <NearBtn emoji="📚" label="Library" onClick={() => goNearest("library", "library")} />
+            <NearBtn emoji="🍽️" label="Canteen" onClick={() => goNearest("canteen", "canteen")} />
+          </div>
+        </div>
+      )}
+
       {/* The big go button */}
       <div className="mt-auto pt-8">
         {ready ? (
@@ -73,6 +102,27 @@ export default function Home() {
         </Link>
       </div>
     </main>
+  );
+}
+
+/** A compact "find nearest" button. */
+function NearBtn({
+  emoji,
+  label,
+  onClick,
+}: {
+  emoji: string;
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className="flex flex-col items-center gap-1 rounded-xl2 bg-white px-2 py-3 text-center shadow-sm ring-1 ring-slate-200 active:scale-[0.99]"
+    >
+      <span aria-hidden className="text-3xl">{emoji}</span>
+      <span className="text-sm font-bold text-navy">{label}</span>
+    </button>
   );
 }
 

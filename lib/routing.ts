@@ -24,7 +24,7 @@ export type Step = {
 };
 
 export type RouteResult =
-  | { ok: true; steps: Step[]; fromName: string; toName: string }
+  | { ok: true; steps: Step[]; nodes: string[]; fromName: string; toName: string }
   | { ok: false; reason: string };
 
 // Look up which graph node a chosen location sits at.
@@ -142,5 +142,40 @@ export function findRoute(fromId: string, toId: string): RouteResult {
     };
   });
 
-  return { ok: true, steps, fromName, toName };
+  // The ordered list of nodes the route passes through (for the map view).
+  const nodes = [startNode, ...edges.map((e) => e.to)];
+
+  return { ok: true, steps, nodes, fromName, toName };
+}
+
+/**
+ * Find the NEAREST location of a given type (e.g. "toilet") to where the
+ * student is now, by exploring the map outwards until we hit one. Returns the
+ * location id, or null if none can be reached.
+ */
+export function findNearest(fromId: string, type: string): string | null {
+  const startNode = nodeForLocation(fromId);
+  if (!startNode) return null;
+
+  // Group target locations by the node they sit at.
+  const targetsByNode = new Map<string, string>(); // node -> location id
+  for (const l of allLocations) {
+    if (l.type === type) targetsByNode.set(l.node, l.id);
+  }
+  if (targetsByNode.size === 0) return null;
+
+  const graph = buildGraph();
+  const visited = new Set<string>([startNode]);
+  const queue: string[] = [startNode];
+  while (queue.length) {
+    const node = queue.shift()!;
+    if (node !== startNode && targetsByNode.has(node)) return targetsByNode.get(node)!;
+    for (const edge of graph.get(node) ?? []) {
+      if (!visited.has(edge.to)) {
+        visited.add(edge.to);
+        queue.push(edge.to);
+      }
+    }
+  }
+  return null;
 }
