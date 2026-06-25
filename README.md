@@ -162,12 +162,18 @@ npm run build    # output appears in the /out folder
 
 ---
 
-## 🗺️ Adding a floor-plan later (not built yet)
+## 🗺️ The campus map (floor-plan view)
 
-There's no floor plan today, and routing doesn't need one. When you have one,
-each node already carries a `floor` value, so a future `<FloorPlan/>` component
-could sit on the route screen and highlight the current step on a plan image —
-without changing any of the route data you've written.
+The app includes a **Campus map** (link on the home screen, and a "See it on the
+map" button when you arrive). It shows each floor as a clean schematic and pins
+📍 the places you chose.
+
+- The maps are drawn from **`data/floorplans.json`** — one entry per floor
+  (e.g. `secondary-ground`), with each room/area placed by simple coordinates
+  (`x`, `y`, `w`, `h`) and a `kind` (room, office, stairs, lift, toilet, exit,
+  open, landmark). Edit a label or nudge a box right there; no other code changes.
+- Highlighting matches by **room number**, so a chosen room lights up on its
+  floor automatically.
 
 ---
 

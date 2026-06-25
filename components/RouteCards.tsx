@@ -6,9 +6,11 @@
  * arrived!" screen with a button to reverse the route or start again.
  */
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BASE } from "@/lib/paths";
-import { setChoiceId } from "@/lib/store";
+import { setChoiceId, findLocation } from "@/lib/store";
+import { floorKeyForLocation } from "@/lib/floors";
 import type { Step } from "@/lib/routing";
 
 export default function RouteCards({
@@ -31,6 +33,13 @@ export default function RouteCards({
   const total = steps.length;
   const cardCount = total + 1; // + the "arrived" card
   const onArrived = index >= total;
+
+  // Link to the campus map showing the destination floor with both places pinned.
+  const destFloor = floorKeyForLocation(findLocation(toId));
+  const mapHref =
+    `/map?` +
+    (destFloor ? `floor=${destFloor}&` : "") +
+    `hl=${encodeURIComponent(fromId)},${encodeURIComponent(toId)}`;
 
   function scrollToCard(i: number) {
     const el = scroller.current;
@@ -148,6 +157,12 @@ export default function RouteCards({
             >
               ↩︎ Take me back to {fromName}
             </button>
+            <Link
+              href={mapHref}
+              className="w-full rounded-xl2 bg-white px-6 py-4 text-center text-lg font-bold text-navy shadow ring-1 ring-slate-200 active:scale-[0.99]"
+            >
+              🗺️ See it on the map
+            </Link>
             <button
               onClick={() => router.push("/")}
               className="w-full rounded-xl2 bg-white px-6 py-4 text-lg font-bold text-navy shadow ring-1 ring-slate-200 active:scale-[0.99]"

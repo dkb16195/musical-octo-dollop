@@ -66,9 +66,19 @@ export default function FloorPlan({
   if (!floor) return null;
   const { w, h } = floor;
 
-  const isHit = (cell: Cell) =>
-    (cell.roomId && highlight.includes(cell.roomId)) ||
-    (cell.node && highlight.includes(cell.node));
+  // A place can be highlighted by its room NUMBER (e.g. "305" matches a cell
+  // labelled 305, even if the id is "305 - Design Room") or by its node.
+  const leadNum = (s: string) => {
+    const m = s.match(/^\s*0*(\d+)/);
+    return m ? Number(m[1]) : null;
+  };
+  const hiNums = new Set(highlight.map(leadNum).filter((n) => n !== null));
+  const hiNodes = new Set(highlight);
+  const isHit = (cell: Cell) => {
+    if (cell.node && hiNodes.has(cell.node)) return true;
+    const n = leadNum(cell.roomId ?? cell.label);
+    return n !== null && hiNums.has(n);
+  };
 
   return (
     <svg

@@ -65,6 +65,12 @@ export default function Home() {
             Choose both places to start
           </div>
         )}
+        <Link
+          href="/map"
+          className="mt-3 block w-full rounded-xl2 bg-white px-6 py-3.5 text-center text-base font-bold text-navy shadow-sm ring-1 ring-slate-200 active:scale-[0.99]"
+        >
+          🗺️ Browse the campus map
+        </Link>
       </div>
     </main>
   );
