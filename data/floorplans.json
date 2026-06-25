@@ -2,34 +2,45 @@
   "secondary-ground": {
     "title": "Ground Floor",
     "subtitle": "Secondary Building",
-    "cols": 7,
-    "rowH": 100,
+    "note": "Schematic wayfinding guide — not to scale",
+    "w": 1000,
+    "h": 640,
+    "compass": true,
     "cells": [
-      { "c": 0, "r": 0, "label": "IT Dept", "sub": "Reception", "kind": "office", "node": "reception" },
-      { "c": 1, "r": 0, "label": "001", "sub": "Science Lab", "kind": "room", "roomId": "001 - Science Lab" },
-      { "c": 2, "r": 0, "label": "002", "sub": "Science Lab", "kind": "room", "roomId": "002 - Science Lab" },
-      { "c": 3, "r": 0, "label": "003", "sub": "Science Lab", "kind": "room", "roomId": "003 - Science Lab" },
-      { "c": 4, "r": 0, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_g" },
-      { "c": 5, "r": 0, "label": "004", "sub": "Science Lab", "kind": "room", "roomId": "004 - Science Lab" },
-      { "c": 6, "r": 0, "label": "005", "sub": "Science Lab", "kind": "room", "roomId": "005 - Science Lab" },
+      { "x": 30,  "y": 88,  "w": 150, "h": 120, "label": "IT Dept", "sub": "Reception", "kind": "office", "node": "reception" },
+      { "x": 192, "y": 88,  "w": 112, "h": 120, "label": "001", "sub": "Science Lab", "kind": "room", "roomId": "001 - Science Lab" },
+      { "x": 314, "y": 88,  "w": 112, "h": 120, "label": "002", "sub": "Science Lab", "kind": "room", "roomId": "002 - Science Lab" },
+      { "x": 436, "y": 88,  "w": 112, "h": 120, "label": "003", "sub": "Science Lab", "kind": "room", "roomId": "003 - Science Lab" },
+      { "x": 558, "y": 88,  "w": 112, "h": 120, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_g" },
+      { "x": 680, "y": 88,  "w": 112, "h": 120, "label": "004", "sub": "Science Lab", "kind": "room", "roomId": "004 - Science Lab" },
+      { "x": 802, "y": 88,  "w": 152, "h": 120, "label": "005", "sub": "Science Lab", "kind": "room", "roomId": "005 - Science Lab" },
 
-      { "c": 0, "r": 1, "label": "EXIT", "kind": "exit" },
-      { "c": 1, "r": 1, "cs": 3, "rs": 2, "label": "Central Courtyard", "sub": "Grand Stadium (stepped seating)", "kind": "open", "node": "courtyard" },
-      { "c": 4, "r": 1, "label": "014", "sub": "Computer Lab", "kind": "room", "roomId": "014 - Science Lab" },
-      { "c": 5, "r": 1, "label": "Science Offices", "kind": "office" },
-      { "c": 6, "r": 1, "rs": 2, "label": "006", "sub": "Science Lab", "kind": "room", "roomId": "006 - Science Lab" },
+      { "x": 40,  "y": 230, "w": 104, "h": 34,  "label": "↑ EXIT", "kind": "exit" },
+      { "x": 30,  "y": 274, "w": 128, "h": 104, "label": "Stairs", "kind": "stairs" },
+      { "x": 30,  "y": 388, "w": 128, "h": 58,  "label": "Lift", "kind": "lift" },
+      { "x": 30,  "y": 456, "w": 128, "h": 56,  "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_g" },
 
-      { "c": 0, "r": 2, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_g" },
-      { "c": 4, "r": 2, "label": "013", "kind": "room" },
-      { "c": 5, "r": 2, "label": "Labs Prep", "kind": "office" },
+      { "x": 174, "y": 230, "w": 300, "h": 282, "label": "Central Courtyard", "sub": "Atrium · Grand Stadium (stepped seating)", "kind": "open", "node": "courtyard" },
 
-      { "c": 0, "r": 3, "label": "011", "sub": "Science Lab", "kind": "room", "roomId": "011 - Science Lab" },
-      { "c": 1, "r": 3, "label": "010", "sub": "Science Lab", "kind": "room", "roomId": "010 - Science Lab" },
-      { "c": 2, "r": 3, "label": "009", "sub": "Science Lab", "kind": "room", "roomId": "009 - Science Lab" },
-      { "c": 3, "r": 3, "label": "Stairs", "kind": "stairs" },
-      { "c": 4, "r": 3, "label": "008", "sub": "Science Lab", "kind": "room", "roomId": "008 - Science Lab" },
-      { "c": 5, "r": 3, "label": "007", "sub": "Science Lab", "kind": "room", "roomId": "007 - Science Lab" },
-      { "c": 6, "r": 3, "label": "012", "kind": "room" }
+      { "x": 490, "y": 230, "w": 150, "h": 150, "label": "014", "sub": "Computer Lab", "kind": "room", "roomId": "014 - Science Lab" },
+      { "x": 490, "y": 392, "w": 70,  "h": 120, "label": "013", "kind": "room" },
+      { "x": 570, "y": 392, "w": 70,  "h": 120, "label": "012", "kind": "room" },
+
+      { "x": 648, "y": 230, "w": 110, "h": 120, "label": "Science Offices", "kind": "office" },
+      { "x": 762, "y": 230, "w": 104, "h": 120, "label": "Science Store", "kind": "office" },
+      { "x": 648, "y": 356, "w": 110, "h": 120, "label": "Labs Prep", "kind": "office" },
+      { "x": 762, "y": 356, "w": 104, "h": 120, "label": "Electrical / Plant", "kind": "office" },
+
+      { "x": 872, "y": 230, "w": 92,  "h": 282, "label": "006", "sub": "Science Lab", "kind": "room", "roomId": "006 - Science Lab" },
+
+      { "x": 600, "y": 484, "w": 104, "h": 30,  "label": "↓ EXIT", "kind": "exit" },
+
+      { "x": 174, "y": 524, "w": 118, "h": 92, "label": "011", "sub": "Science Lab", "kind": "room", "roomId": "011 - Science Lab" },
+      { "x": 300, "y": 524, "w": 118, "h": 92, "label": "010", "sub": "Science Lab", "kind": "room", "roomId": "010 - Science Lab" },
+      { "x": 426, "y": 524, "w": 118, "h": 92, "label": "009", "sub": "Science Lab", "kind": "room", "roomId": "009 - Science Lab" },
+      { "x": 552, "y": 524, "w": 118, "h": 92, "label": "Stairs", "kind": "stairs" },
+      { "x": 678, "y": 524, "w": 118, "h": 92, "label": "008", "sub": "Science Lab", "kind": "room", "roomId": "008 - Science Lab" },
+      { "x": 804, "y": 524, "w": 160, "h": 92, "label": "007", "sub": "Science Lab", "kind": "room", "roomId": "007 - Science Lab" }
     ]
   }
 }
