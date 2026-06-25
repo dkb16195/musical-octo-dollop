@@ -1,253 +1,1654 @@
 {
   "secondary-ground": {
-    "title": "Ground Floor", "subtitle": "Secondary Building",
+    "title": "Ground Floor",
+    "subtitle": "Secondary Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 640, "compass": true,
+    "w": 1000,
+    "h": 640,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 150, "h": 120, "label": "IT Dept", "sub": "Reception", "kind": "office", "node": "reception" },
-      { "x": 192, "y": 88, "w": 112, "h": 120, "label": "001", "sub": "Science Lab", "kind": "room" },
-      { "x": 314, "y": 88, "w": 112, "h": 120, "label": "002", "sub": "Science Lab", "kind": "room" },
-      { "x": 436, "y": 88, "w": 112, "h": 120, "label": "003", "sub": "Science Lab", "kind": "room" },
-      { "x": 558, "y": 88, "w": 112, "h": 120, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_g" },
-      { "x": 680, "y": 88, "w": 112, "h": 120, "label": "004", "sub": "Science Lab", "kind": "room" },
-      { "x": 802, "y": 88, "w": 152, "h": 120, "label": "005", "sub": "Science Lab", "kind": "room" },
-      { "x": 40, "y": 230, "w": 104, "h": 34, "label": "↑ EXIT", "kind": "exit" },
-      { "x": 30, "y": 274, "w": 128, "h": 104, "label": "Stairs", "kind": "stairs" },
-      { "x": 30, "y": 388, "w": 128, "h": 58, "label": "Lift", "kind": "lift" },
-      { "x": 30, "y": 456, "w": 128, "h": 56, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_g" },
-      { "x": 174, "y": 230, "w": 300, "h": 282, "label": "Central Courtyard", "sub": "Atrium · Grand Stadium (stepped seating)", "kind": "open", "node": "courtyard" },
-      { "x": 490, "y": 230, "w": 150, "h": 150, "label": "014", "sub": "Computer Lab", "kind": "room" },
-      { "x": 490, "y": 392, "w": 70, "h": 120, "label": "013", "kind": "room" },
-      { "x": 570, "y": 392, "w": 70, "h": 120, "label": "012", "kind": "room" },
-      { "x": 648, "y": 230, "w": 110, "h": 120, "label": "Science Offices", "kind": "office" },
-      { "x": 762, "y": 230, "w": 104, "h": 120, "label": "Science Store", "kind": "office" },
-      { "x": 648, "y": 356, "w": 110, "h": 120, "label": "Labs Prep", "kind": "office" },
-      { "x": 762, "y": 356, "w": 104, "h": 120, "label": "Electrical / Plant", "kind": "office" },
-      { "x": 872, "y": 230, "w": 92, "h": 282, "label": "006", "sub": "Science Lab", "kind": "room" },
-      { "x": 600, "y": 484, "w": 104, "h": 30, "label": "↓ EXIT", "kind": "exit" },
-      { "x": 174, "y": 524, "w": 118, "h": 92, "label": "011", "sub": "Science Lab", "kind": "room" },
-      { "x": 300, "y": 524, "w": 118, "h": 92, "label": "010", "sub": "Science Lab", "kind": "room" },
-      { "x": 426, "y": 524, "w": 118, "h": 92, "label": "009", "sub": "Science Lab", "kind": "room" },
-      { "x": 552, "y": 524, "w": 118, "h": 92, "label": "Stairs", "kind": "stairs" },
-      { "x": 678, "y": 524, "w": 118, "h": 92, "label": "008", "sub": "Science Lab", "kind": "room" },
-      { "x": 804, "y": 524, "w": 160, "h": 92, "label": "007", "sub": "Science Lab", "kind": "room" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 150,
+        "h": 120,
+        "label": "IT Dept",
+        "sub": "Reception",
+        "kind": "office",
+        "node": "reception"
+      },
+      {
+        "x": 192,
+        "y": 88,
+        "w": 112,
+        "h": 120,
+        "label": "001",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 314,
+        "y": 88,
+        "w": 112,
+        "h": 120,
+        "label": "002",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 436,
+        "y": 88,
+        "w": 112,
+        "h": 120,
+        "label": "003",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 558,
+        "y": 88,
+        "w": 112,
+        "h": 120,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_sec_g"
+      },
+      {
+        "x": 680,
+        "y": 88,
+        "w": 112,
+        "h": 120,
+        "label": "004",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 802,
+        "y": 88,
+        "w": 152,
+        "h": 120,
+        "label": "005",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 40,
+        "y": 230,
+        "w": 104,
+        "h": 34,
+        "label": "↑ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 30,
+        "y": 274,
+        "w": 128,
+        "h": 104,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 30,
+        "y": 388,
+        "w": 128,
+        "h": 58,
+        "label": "Lift",
+        "kind": "lift"
+      },
+      {
+        "x": 30,
+        "y": 456,
+        "w": 128,
+        "h": 56,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_sec_g"
+      },
+      {
+        "x": 174,
+        "y": 230,
+        "w": 300,
+        "h": 282,
+        "label": "Central Courtyard",
+        "sub": "Atrium · Grand Stadium (stepped seating)",
+        "kind": "open",
+        "node": "courtyard"
+      },
+      {
+        "x": 490,
+        "y": 230,
+        "w": 150,
+        "h": 150,
+        "label": "014",
+        "sub": "Computer Lab",
+        "kind": "room"
+      },
+      {
+        "x": 490,
+        "y": 392,
+        "w": 70,
+        "h": 120,
+        "label": "013",
+        "kind": "room"
+      },
+      {
+        "x": 570,
+        "y": 392,
+        "w": 70,
+        "h": 120,
+        "label": "012",
+        "kind": "room"
+      },
+      {
+        "x": 648,
+        "y": 230,
+        "w": 110,
+        "h": 120,
+        "label": "Science Offices",
+        "kind": "office"
+      },
+      {
+        "x": 762,
+        "y": 230,
+        "w": 104,
+        "h": 120,
+        "label": "Science Store",
+        "kind": "office"
+      },
+      {
+        "x": 648,
+        "y": 356,
+        "w": 110,
+        "h": 120,
+        "label": "Labs Prep",
+        "kind": "office"
+      },
+      {
+        "x": 762,
+        "y": 356,
+        "w": 104,
+        "h": 120,
+        "label": "Electrical / Plant",
+        "kind": "office"
+      },
+      {
+        "x": 872,
+        "y": 230,
+        "w": 92,
+        "h": 282,
+        "label": "006",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 648,
+        "y": 484,
+        "w": 104,
+        "h": 30,
+        "label": "↓ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 174,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "011",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 300,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "010",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 426,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "009",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 552,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 678,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "008",
+        "sub": "Science Lab",
+        "kind": "room"
+      },
+      {
+        "x": 804,
+        "y": 524,
+        "w": 160,
+        "h": 92,
+        "label": "007",
+        "sub": "Science Lab",
+        "kind": "room"
+      }
     ]
   },
-
   "secondary-first": {
-    "title": "First Floor", "subtitle": "Secondary Building",
+    "title": "First Floor",
+    "subtitle": "Secondary Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 640, "compass": true,
+    "w": 1000,
+    "h": 640,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 126, "h": 116, "label": "103", "kind": "room" },
-      { "x": 164, "y": 88, "w": 126, "h": 116, "label": "104", "kind": "room" },
-      { "x": 298, "y": 88, "w": 126, "h": 116, "label": "105", "kind": "room" },
-      { "x": 432, "y": 88, "w": 126, "h": 116, "label": "106", "kind": "room" },
-      { "x": 566, "y": 88, "w": 126, "h": 116, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_1" },
-      { "x": 700, "y": 88, "w": 126, "h": 116, "label": "107", "kind": "room" },
-      { "x": 834, "y": 88, "w": 136, "h": 116, "label": "108", "kind": "room" },
-      { "x": 834, "y": 212, "w": 136, "h": 102, "label": "109", "kind": "room" },
-      { "x": 834, "y": 322, "w": 136, "h": 102, "label": "110", "kind": "room" },
-      { "x": 834, "y": 432, "w": 136, "h": 102, "label": "111", "kind": "room" },
-      { "x": 120, "y": 212, "w": 104, "h": 30, "label": "↑ EXIT", "kind": "exit" },
-      { "x": 40, "y": 252, "w": 150, "h": 92, "label": "124", "kind": "room" },
-      { "x": 30, "y": 354, "w": 62, "h": 52, "label": "122", "kind": "office" },
-      { "x": 100, "y": 354, "w": 62, "h": 52, "label": "121", "kind": "office" },
-      { "x": 170, "y": 354, "w": 62, "h": 52, "label": "120", "kind": "office" },
-      { "x": 30, "y": 418, "w": 120, "h": 96, "label": "118", "sub": "Inclusion", "kind": "room" },
-      { "x": 158, "y": 418, "w": 58, "h": 96, "label": "123", "kind": "office" },
-      { "x": 224, "y": 418, "w": 58, "h": 96, "label": "119", "kind": "office" },
-      { "x": 250, "y": 212, "w": 250, "h": 92, "label": "SLT Offices", "sub": "Meeting Rm · SLT 1–4", "kind": "office" },
-      { "x": 250, "y": 312, "w": 250, "h": 92, "label": "Head of Secondary", "sub": "Office · PA to Head", "kind": "office" },
-      { "x": 300, "y": 414, "w": 220, "h": 100, "label": "Open to below", "kind": "open" },
-      { "x": 540, "y": 212, "w": 150, "h": 150, "label": "114", "kind": "room" },
-      { "x": 540, "y": 370, "w": 150, "h": 90, "label": "114A", "sub": "Staff Room", "kind": "office" },
-      { "x": 250, "y": 524, "w": 104, "h": 92, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_1" },
-      { "x": 362, "y": 524, "w": 104, "h": 92, "label": "117", "kind": "room" },
-      { "x": 474, "y": 524, "w": 104, "h": 92, "label": "116", "kind": "room" },
-      { "x": 586, "y": 524, "w": 104, "h": 92, "label": "115", "kind": "room" },
-      { "x": 698, "y": 524, "w": 104, "h": 92, "label": "Stairs", "kind": "stairs" },
-      { "x": 810, "y": 524, "w": 76, "h": 92, "label": "113", "kind": "room" },
-      { "x": 894, "y": 524, "w": 76, "h": 92, "label": "112", "kind": "room" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "103",
+        "kind": "room"
+      },
+      {
+        "x": 164,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "104",
+        "kind": "room"
+      },
+      {
+        "x": 298,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "105",
+        "kind": "room"
+      },
+      {
+        "x": 432,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "106",
+        "kind": "room"
+      },
+      {
+        "x": 566,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_sec_1"
+      },
+      {
+        "x": 700,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "107",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 88,
+        "w": 136,
+        "h": 116,
+        "label": "108",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 212,
+        "w": 136,
+        "h": 102,
+        "label": "109",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 322,
+        "w": 136,
+        "h": 102,
+        "label": "110",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 432,
+        "w": 136,
+        "h": 86,
+        "label": "111",
+        "kind": "room"
+      },
+      {
+        "x": 120,
+        "y": 212,
+        "w": 104,
+        "h": 30,
+        "label": "↑ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 40,
+        "y": 252,
+        "w": 150,
+        "h": 92,
+        "label": "124",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 354,
+        "w": 62,
+        "h": 52,
+        "label": "122",
+        "kind": "office"
+      },
+      {
+        "x": 100,
+        "y": 354,
+        "w": 62,
+        "h": 52,
+        "label": "121",
+        "kind": "office"
+      },
+      {
+        "x": 170,
+        "y": 354,
+        "w": 62,
+        "h": 52,
+        "label": "120",
+        "kind": "office"
+      },
+      {
+        "x": 30,
+        "y": 418,
+        "w": 120,
+        "h": 96,
+        "label": "118",
+        "sub": "Inclusion",
+        "kind": "room"
+      },
+      {
+        "x": 158,
+        "y": 418,
+        "w": 58,
+        "h": 96,
+        "label": "123",
+        "kind": "office"
+      },
+      {
+        "x": 224,
+        "y": 418,
+        "w": 58,
+        "h": 96,
+        "label": "119",
+        "kind": "office"
+      },
+      {
+        "x": 250,
+        "y": 212,
+        "w": 250,
+        "h": 92,
+        "label": "SLT Offices",
+        "sub": "Meeting Rm · SLT 1–4",
+        "kind": "office"
+      },
+      {
+        "x": 250,
+        "y": 312,
+        "w": 250,
+        "h": 92,
+        "label": "Head of Secondary",
+        "sub": "Office · PA to Head",
+        "kind": "office"
+      },
+      {
+        "x": 300,
+        "y": 414,
+        "w": 220,
+        "h": 100,
+        "label": "Open to below",
+        "kind": "open"
+      },
+      {
+        "x": 540,
+        "y": 212,
+        "w": 150,
+        "h": 150,
+        "label": "114",
+        "kind": "room"
+      },
+      {
+        "x": 540,
+        "y": 370,
+        "w": 150,
+        "h": 90,
+        "label": "114A",
+        "sub": "Staff Room",
+        "kind": "office"
+      },
+      {
+        "x": 250,
+        "y": 524,
+        "w": 104,
+        "h": 92,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_sec_1"
+      },
+      {
+        "x": 362,
+        "y": 524,
+        "w": 104,
+        "h": 92,
+        "label": "117",
+        "kind": "room"
+      },
+      {
+        "x": 474,
+        "y": 524,
+        "w": 104,
+        "h": 92,
+        "label": "116",
+        "kind": "room"
+      },
+      {
+        "x": 586,
+        "y": 524,
+        "w": 104,
+        "h": 92,
+        "label": "115",
+        "kind": "room"
+      },
+      {
+        "x": 698,
+        "y": 524,
+        "w": 104,
+        "h": 92,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 810,
+        "y": 524,
+        "w": 76,
+        "h": 92,
+        "label": "113",
+        "kind": "room"
+      },
+      {
+        "x": 894,
+        "y": 524,
+        "w": 76,
+        "h": 92,
+        "label": "112",
+        "kind": "room"
+      }
     ]
   },
-
   "secondary-second": {
-    "title": "Second Floor", "subtitle": "Secondary Building",
+    "title": "Second Floor",
+    "subtitle": "Secondary Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 640, "compass": true,
+    "w": 1000,
+    "h": 640,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 126, "h": 116, "label": "202", "kind": "room" },
-      { "x": 164, "y": 88, "w": 126, "h": 116, "label": "203", "kind": "room" },
-      { "x": 298, "y": 88, "w": 126, "h": 116, "label": "204", "kind": "room" },
-      { "x": 432, "y": 88, "w": 126, "h": 116, "label": "205", "kind": "room" },
-      { "x": 566, "y": 88, "w": 126, "h": 116, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_2" },
-      { "x": 700, "y": 88, "w": 126, "h": 116, "label": "206", "kind": "room" },
-      { "x": 834, "y": 88, "w": 136, "h": 116, "label": "207", "kind": "room" },
-      { "x": 30, "y": 212, "w": 150, "h": 100, "label": "233", "kind": "room" },
-      { "x": 30, "y": 320, "w": 150, "h": 100, "label": "234", "kind": "room" },
-      { "x": 30, "y": 428, "w": 150, "h": 86, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_2" },
-      { "x": 40, "y": 528, "w": 104, "h": 30, "label": "↑ EXIT", "kind": "exit" },
-      { "x": 834, "y": 212, "w": 136, "h": 116, "label": "208", "sub": "I&S Collab", "kind": "room" },
-      { "x": 834, "y": 336, "w": 136, "h": 116, "label": "209", "kind": "room" },
-      { "x": 834, "y": 460, "w": 136, "h": 56, "label": "211", "kind": "room" },
-      { "x": 300, "y": 230, "w": 300, "h": 250, "label": "Open to below", "kind": "open" },
-      { "x": 640, "y": 300, "w": 150, "h": 120, "label": "214", "sub": "English Collab", "kind": "room" },
-      { "x": 180, "y": 524, "w": 124, "h": 92, "label": "218", "kind": "room" },
-      { "x": 312, "y": 524, "w": 124, "h": 92, "label": "217", "kind": "room" },
-      { "x": 444, "y": 524, "w": 124, "h": 92, "label": "216", "kind": "room" },
-      { "x": 576, "y": 524, "w": 124, "h": 92, "label": "Stairs", "kind": "stairs" },
-      { "x": 708, "y": 524, "w": 118, "h": 92, "label": "213", "kind": "room" },
-      { "x": 834, "y": 524, "w": 136, "h": 92, "label": "212", "kind": "room" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "202",
+        "kind": "room"
+      },
+      {
+        "x": 164,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "203",
+        "kind": "room"
+      },
+      {
+        "x": 298,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "204",
+        "kind": "room"
+      },
+      {
+        "x": 432,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "205",
+        "kind": "room"
+      },
+      {
+        "x": 566,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_sec_2"
+      },
+      {
+        "x": 700,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "206",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 88,
+        "w": 136,
+        "h": 116,
+        "label": "207",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 212,
+        "w": 150,
+        "h": 100,
+        "label": "233",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 320,
+        "w": 150,
+        "h": 100,
+        "label": "234",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 428,
+        "w": 150,
+        "h": 86,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_sec_2"
+      },
+      {
+        "x": 40,
+        "y": 528,
+        "w": 104,
+        "h": 30,
+        "label": "↑ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 834,
+        "y": 212,
+        "w": 136,
+        "h": 116,
+        "label": "208",
+        "sub": "I&S Collab",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 336,
+        "w": 136,
+        "h": 116,
+        "label": "209",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 460,
+        "w": 136,
+        "h": 56,
+        "label": "211",
+        "kind": "room"
+      },
+      {
+        "x": 300,
+        "y": 230,
+        "w": 300,
+        "h": 250,
+        "label": "Open to below",
+        "kind": "open"
+      },
+      {
+        "x": 640,
+        "y": 300,
+        "w": 150,
+        "h": 120,
+        "label": "214",
+        "sub": "English Collab",
+        "kind": "room"
+      },
+      {
+        "x": 180,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "218",
+        "kind": "room"
+      },
+      {
+        "x": 312,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "217",
+        "kind": "room"
+      },
+      {
+        "x": 444,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "216",
+        "kind": "room"
+      },
+      {
+        "x": 576,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 708,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "213",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 524,
+        "w": 136,
+        "h": 92,
+        "label": "212",
+        "kind": "room"
+      }
     ]
   },
-
   "secondary-third": {
-    "title": "Third Floor", "subtitle": "Secondary Building",
+    "title": "Third Floor",
+    "subtitle": "Secondary Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 640, "compass": true,
+    "w": 1000,
+    "h": 640,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 126, "h": 116, "label": "302", "kind": "room" },
-      { "x": 164, "y": 88, "w": 126, "h": 116, "label": "303", "kind": "room" },
-      { "x": 298, "y": 88, "w": 126, "h": 116, "label": "304", "kind": "room" },
-      { "x": 432, "y": 88, "w": 126, "h": 116, "label": "305", "kind": "room" },
-      { "x": 566, "y": 88, "w": 126, "h": 116, "label": "Stairs", "kind": "stairs", "node": "stairs_sec_3" },
-      { "x": 700, "y": 88, "w": 126, "h": 116, "label": "306", "kind": "room" },
-      { "x": 834, "y": 88, "w": 136, "h": 116, "label": "307", "kind": "room" },
-      { "x": 834, "y": 212, "w": 136, "h": 96, "label": "307 A", "kind": "office" },
-      { "x": 834, "y": 316, "w": 136, "h": 104, "label": "308", "kind": "room" },
-      { "x": 834, "y": 428, "w": 136, "h": 104, "label": "309", "kind": "room" },
-      { "x": 30, "y": 212, "w": 190, "h": 90, "label": "Head of Secondary", "sub": "Office", "kind": "office" },
-      { "x": 30, "y": 310, "w": 58, "h": 64, "label": "SLT 1", "kind": "office" },
-      { "x": 96, "y": 310, "w": 58, "h": 64, "label": "SLT 2", "kind": "office" },
-      { "x": 162, "y": 310, "w": 58, "h": 64, "label": "SLT 3", "kind": "office" },
-      { "x": 30, "y": 384, "w": 190, "h": 80, "label": "PA to Head", "kind": "office" },
-      { "x": 40, "y": 474, "w": 120, "h": 58, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_sec_3" },
-      { "x": 40, "y": 544, "w": 104, "h": 30, "label": "↑ EXIT", "kind": "exit" },
-      { "x": 300, "y": 230, "w": 320, "h": 250, "label": "Open to below", "kind": "open" },
-      { "x": 180, "y": 524, "w": 124, "h": 92, "label": "314", "kind": "room" },
-      { "x": 312, "y": 524, "w": 124, "h": 92, "label": "313", "kind": "room" },
-      { "x": 444, "y": 524, "w": 124, "h": 92, "label": "312", "kind": "room" },
-      { "x": 576, "y": 524, "w": 124, "h": 92, "label": "Stairs", "kind": "stairs" },
-      { "x": 708, "y": 524, "w": 118, "h": 92, "label": "311", "kind": "room" },
-      { "x": 834, "y": 524, "w": 136, "h": 92, "label": "310", "kind": "room" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "302",
+        "kind": "room"
+      },
+      {
+        "x": 164,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "303",
+        "kind": "room"
+      },
+      {
+        "x": 298,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "304",
+        "kind": "room"
+      },
+      {
+        "x": 432,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "305",
+        "kind": "room"
+      },
+      {
+        "x": 566,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_sec_3"
+      },
+      {
+        "x": 700,
+        "y": 88,
+        "w": 126,
+        "h": 116,
+        "label": "306",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 88,
+        "w": 136,
+        "h": 116,
+        "label": "307",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 212,
+        "w": 136,
+        "h": 96,
+        "label": "307 A",
+        "kind": "office"
+      },
+      {
+        "x": 834,
+        "y": 316,
+        "w": 136,
+        "h": 104,
+        "label": "308",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 428,
+        "w": 136,
+        "h": 88,
+        "label": "309",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 212,
+        "w": 190,
+        "h": 90,
+        "label": "Head of Secondary",
+        "sub": "Office",
+        "kind": "office"
+      },
+      {
+        "x": 30,
+        "y": 310,
+        "w": 58,
+        "h": 64,
+        "label": "SLT 1",
+        "kind": "office"
+      },
+      {
+        "x": 96,
+        "y": 310,
+        "w": 58,
+        "h": 64,
+        "label": "SLT 2",
+        "kind": "office"
+      },
+      {
+        "x": 162,
+        "y": 310,
+        "w": 58,
+        "h": 64,
+        "label": "SLT 3",
+        "kind": "office"
+      },
+      {
+        "x": 30,
+        "y": 384,
+        "w": 190,
+        "h": 80,
+        "label": "PA to Head",
+        "kind": "office"
+      },
+      {
+        "x": 40,
+        "y": 474,
+        "w": 120,
+        "h": 58,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_sec_3"
+      },
+      {
+        "x": 40,
+        "y": 544,
+        "w": 104,
+        "h": 30,
+        "label": "↑ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 300,
+        "y": 230,
+        "w": 320,
+        "h": 250,
+        "label": "Open to below",
+        "kind": "open"
+      },
+      {
+        "x": 180,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "314",
+        "kind": "room"
+      },
+      {
+        "x": 312,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "313",
+        "kind": "room"
+      },
+      {
+        "x": 444,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "312",
+        "kind": "room"
+      },
+      {
+        "x": 576,
+        "y": 524,
+        "w": 124,
+        "h": 92,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 708,
+        "y": 524,
+        "w": 118,
+        "h": 92,
+        "label": "311",
+        "kind": "room"
+      },
+      {
+        "x": 834,
+        "y": 524,
+        "w": 136,
+        "h": 92,
+        "label": "310",
+        "kind": "room"
+      }
     ]
   },
-
   "auditorium-first": {
-    "title": "First Floor", "subtitle": "Auditorium Building",
+    "title": "First Floor",
+    "subtitle": "Auditorium Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 730, "compass": true,
+    "w": 1000,
+    "h": 730,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 300, "h": 76, "label": "Parent Café", "kind": "landmark" },
-      { "x": 344, "y": 88, "w": 160, "h": 76, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_aud_1" },
-      { "x": 560, "y": 88, "w": 410, "h": 60, "label": "New Canteen (Grab & Go)", "kind": "landmark", "node": "canteen" },
-      { "x": 560, "y": 160, "w": 240, "h": 96, "label": "133", "sub": "PY Music", "kind": "room" },
-      { "x": 812, "y": 160, "w": 158, "h": 96, "label": "Store", "kind": "office" },
-      { "x": 30, "y": 290, "w": 130, "h": 100, "label": "Stairs", "kind": "stairs", "node": "stairs_aud_1" },
-      { "x": 30, "y": 400, "w": 130, "h": 120, "label": "Store / Changing", "kind": "office" },
-      { "x": 30, "y": 530, "w": 130, "h": 96, "label": "Stairs", "kind": "stairs" },
-      { "x": 44, "y": 636, "w": 104, "h": 30, "label": "← EXIT", "kind": "exit" },
-      { "x": 180, "y": 290, "w": 430, "h": 320, "label": "AUDITORIUM", "sub": "Theatre seating + stage", "kind": "landmark", "node": "auditorium" },
-      { "x": 632, "y": 280, "w": 96, "h": 96, "label": "Stairs", "kind": "stairs" },
-      { "x": 632, "y": 386, "w": 96, "h": 96, "label": "Stairs", "kind": "stairs" },
-      { "x": 632, "y": 492, "w": 96, "h": 96, "label": "Stairs", "kind": "stairs" },
-      { "x": 632, "y": 598, "w": 96, "h": 80, "label": "Lift", "kind": "lift" },
-      { "x": 748, "y": 360, "w": 108, "h": 130, "label": "126", "kind": "room" },
-      { "x": 862, "y": 360, "w": 108, "h": 130, "label": "125", "kind": "room" },
-      { "x": 30, "y": 636, "w": 160, "h": 80, "label": "Stage Store", "kind": "office" },
-      { "x": 200, "y": 636, "w": 160, "h": 80, "label": "132", "sub": "Drama Studio", "kind": "room" },
-      { "x": 370, "y": 636, "w": 240, "h": 80, "label": "IT Spare Equipment Store", "kind": "office" },
-      { "x": 748, "y": 636, "w": 222, "h": 80, "label": "Electrical Room / Lift Lobby", "kind": "office" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 300,
+        "h": 76,
+        "label": "Parent Café",
+        "kind": "landmark"
+      },
+      {
+        "x": 344,
+        "y": 88,
+        "w": 160,
+        "h": 76,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_aud_1"
+      },
+      {
+        "x": 560,
+        "y": 88,
+        "w": 410,
+        "h": 60,
+        "label": "New Canteen (Grab & Go)",
+        "kind": "landmark",
+        "node": "canteen"
+      },
+      {
+        "x": 560,
+        "y": 160,
+        "w": 240,
+        "h": 96,
+        "label": "133",
+        "sub": "PY Music",
+        "kind": "room"
+      },
+      {
+        "x": 812,
+        "y": 160,
+        "w": 158,
+        "h": 96,
+        "label": "Store",
+        "kind": "office"
+      },
+      {
+        "x": 30,
+        "y": 290,
+        "w": 130,
+        "h": 100,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_aud_1"
+      },
+      {
+        "x": 30,
+        "y": 400,
+        "w": 130,
+        "h": 120,
+        "label": "Store / Changing",
+        "kind": "office"
+      },
+      {
+        "x": 30,
+        "y": 530,
+        "w": 130,
+        "h": 96,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 180,
+        "y": 612,
+        "w": 104,
+        "h": 22,
+        "label": "← EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 180,
+        "y": 290,
+        "w": 430,
+        "h": 320,
+        "label": "AUDITORIUM",
+        "sub": "Theatre seating + stage",
+        "kind": "landmark",
+        "node": "auditorium"
+      },
+      {
+        "x": 632,
+        "y": 280,
+        "w": 96,
+        "h": 96,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 632,
+        "y": 386,
+        "w": 96,
+        "h": 96,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 632,
+        "y": 492,
+        "w": 96,
+        "h": 96,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 632,
+        "y": 598,
+        "w": 96,
+        "h": 80,
+        "label": "Lift",
+        "kind": "lift"
+      },
+      {
+        "x": 748,
+        "y": 360,
+        "w": 108,
+        "h": 130,
+        "label": "126",
+        "kind": "room"
+      },
+      {
+        "x": 862,
+        "y": 360,
+        "w": 108,
+        "h": 130,
+        "label": "125",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 636,
+        "w": 160,
+        "h": 80,
+        "label": "Stage Store",
+        "kind": "office"
+      },
+      {
+        "x": 200,
+        "y": 636,
+        "w": 160,
+        "h": 80,
+        "label": "132",
+        "sub": "Drama Studio",
+        "kind": "room"
+      },
+      {
+        "x": 370,
+        "y": 636,
+        "w": 240,
+        "h": 80,
+        "label": "IT Spare Equipment Store",
+        "kind": "office"
+      },
+      {
+        "x": 748,
+        "y": 636,
+        "w": 222,
+        "h": 80,
+        "label": "Electrical Room / Lift Lobby",
+        "kind": "office"
+      }
     ]
   },
-
   "auditorium-second": {
-    "title": "Second Floor", "subtitle": "Auditorium Building",
+    "title": "Second Floor",
+    "subtitle": "Auditorium Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 690, "compass": true,
+    "w": 1000,
+    "h": 690,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 100, "w": 120, "h": 110, "label": "Stairs", "kind": "stairs", "node": "stairs_aud_2" },
-      { "x": 30, "y": 222, "w": 300, "h": 300, "label": "AUDITORIUM", "sub": "Upper Level", "kind": "landmark" },
-      { "x": 360, "y": 100, "w": 150, "h": 110, "label": "224", "kind": "room" },
-      { "x": 520, "y": 100, "w": 150, "h": 110, "label": "231", "kind": "room" },
-      { "x": 680, "y": 100, "w": 150, "h": 110, "label": "232", "kind": "room" },
-      { "x": 360, "y": 222, "w": 150, "h": 58, "label": "225", "kind": "room" },
-      { "x": 360, "y": 286, "w": 150, "h": 58, "label": "226", "kind": "room" },
-      { "x": 360, "y": 350, "w": 150, "h": 58, "label": "227", "kind": "room" },
-      { "x": 360, "y": 414, "w": 150, "h": 58, "label": "228", "kind": "room" },
-      { "x": 360, "y": 478, "w": 150, "h": 58, "label": "229", "kind": "room" },
-      { "x": 360, "y": 542, "w": 150, "h": 58, "label": "230", "kind": "room" },
-      { "x": 360, "y": 606, "w": 150, "h": 58, "label": "219", "sub": "Music Collab", "kind": "room" },
-      { "x": 530, "y": 360, "w": 110, "h": 120, "label": "Stairs", "kind": "stairs" },
-      { "x": 660, "y": 222, "w": 160, "h": 150, "label": "Primary Library", "kind": "landmark", "node": "lib_primary" },
-      { "x": 830, "y": 222, "w": 140, "h": 150, "label": "Secondary Library", "kind": "landmark", "node": "lib_secondary" },
-      { "x": 660, "y": 384, "w": 160, "h": 120, "label": "235", "kind": "room" },
-      { "x": 830, "y": 384, "w": 140, "h": 120, "label": "Store Room", "kind": "office" },
-      { "x": 690, "y": 516, "w": 104, "h": 30, "label": "↓ EXIT", "kind": "exit" },
-      { "x": 30, "y": 540, "w": 80, "h": 124, "label": "223", "kind": "room" },
-      { "x": 118, "y": 540, "w": 80, "h": 124, "label": "222", "kind": "room" },
-      { "x": 206, "y": 540, "w": 80, "h": 124, "label": "221", "sub": "Music", "kind": "room" },
-      { "x": 294, "y": 540, "w": 80, "h": 124, "label": "220", "sub": "Music", "kind": "room" },
-      { "x": 382, "y": 540, "w": 90, "h": 124, "label": "Lift", "kind": "lift" }
+      {
+        "x": 30,
+        "y": 100,
+        "w": 120,
+        "h": 110,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_aud_2"
+      },
+      {
+        "x": 30,
+        "y": 222,
+        "w": 300,
+        "h": 300,
+        "label": "AUDITORIUM",
+        "sub": "Upper Level",
+        "kind": "landmark"
+      },
+      {
+        "x": 360,
+        "y": 100,
+        "w": 150,
+        "h": 110,
+        "label": "224",
+        "kind": "room"
+      },
+      {
+        "x": 520,
+        "y": 100,
+        "w": 150,
+        "h": 110,
+        "label": "231",
+        "kind": "room"
+      },
+      {
+        "x": 680,
+        "y": 100,
+        "w": 150,
+        "h": 110,
+        "label": "232",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 222,
+        "w": 150,
+        "h": 39,
+        "label": "225",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 267,
+        "w": 150,
+        "h": 39,
+        "label": "226",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 312,
+        "w": 150,
+        "h": 39,
+        "label": "227",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 357,
+        "w": 150,
+        "h": 39,
+        "label": "228",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 402,
+        "w": 150,
+        "h": 39,
+        "label": "229",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 447,
+        "w": 150,
+        "h": 39,
+        "label": "230",
+        "kind": "room"
+      },
+      {
+        "x": 360,
+        "y": 492,
+        "w": 150,
+        "h": 39,
+        "label": "219",
+        "sub": "Music Collab",
+        "kind": "room"
+      },
+      {
+        "x": 530,
+        "y": 360,
+        "w": 110,
+        "h": 120,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 660,
+        "y": 222,
+        "w": 160,
+        "h": 150,
+        "label": "Primary Library",
+        "kind": "landmark",
+        "node": "lib_primary"
+      },
+      {
+        "x": 830,
+        "y": 222,
+        "w": 140,
+        "h": 150,
+        "label": "Secondary Library",
+        "kind": "landmark",
+        "node": "lib_secondary"
+      },
+      {
+        "x": 660,
+        "y": 384,
+        "w": 160,
+        "h": 120,
+        "label": "235",
+        "kind": "room"
+      },
+      {
+        "x": 830,
+        "y": 384,
+        "w": 140,
+        "h": 120,
+        "label": "Store Room",
+        "kind": "office"
+      },
+      {
+        "x": 690,
+        "y": 516,
+        "w": 104,
+        "h": 30,
+        "label": "↓ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 30,
+        "y": 540,
+        "w": 80,
+        "h": 124,
+        "label": "223",
+        "kind": "room"
+      },
+      {
+        "x": 118,
+        "y": 540,
+        "w": 80,
+        "h": 124,
+        "label": "222",
+        "kind": "room"
+      },
+      {
+        "x": 206,
+        "y": 540,
+        "w": 80,
+        "h": 124,
+        "label": "221",
+        "sub": "Music",
+        "kind": "room"
+      },
+      {
+        "x": 294,
+        "y": 540,
+        "w": 80,
+        "h": 124,
+        "label": "220",
+        "sub": "Music",
+        "kind": "room"
+      },
+      {
+        "x": 382,
+        "y": 540,
+        "w": 90,
+        "h": 124,
+        "label": "Lift",
+        "kind": "lift"
+      }
     ]
   },
-
   "auditorium-third": {
-    "title": "Third Floor", "subtitle": "Auditorium Building",
+    "title": "Third Floor",
+    "subtitle": "Auditorium Building",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 700, "compass": true,
+    "w": 1000,
+    "h": 700,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 120, "h": 116, "label": "Exam Store", "kind": "office" },
-      { "x": 158, "y": 88, "w": 120, "h": 116, "label": "321", "sub": "Design", "kind": "room" },
-      { "x": 286, "y": 88, "w": 120, "h": 116, "label": "322", "sub": "Computer Lab 1", "kind": "room" },
-      { "x": 414, "y": 88, "w": 120, "h": 116, "label": "323", "sub": "Computer Lab 2", "kind": "room" },
-      { "x": 542, "y": 88, "w": 120, "h": 116, "label": "324", "sub": "Design", "kind": "room" },
-      { "x": 670, "y": 88, "w": 120, "h": 116, "label": "325", "sub": "Design", "kind": "room" },
-      { "x": 830, "y": 88, "w": 140, "h": 70, "label": "327", "kind": "room" },
-      { "x": 830, "y": 166, "w": 140, "h": 96, "label": "Store", "kind": "office" },
-      { "x": 158, "y": 230, "w": 110, "h": 110, "label": "Stairs", "kind": "stairs", "node": "stairs_aud_3" },
-      { "x": 250, "y": 360, "w": 430, "h": 210, "label": "Art Display Open Area", "kind": "landmark", "node": "art_display" },
-      { "x": 770, "y": 340, "w": 90, "h": 110, "label": "Stairs", "kind": "stairs" },
-      { "x": 700, "y": 360, "w": 270, "h": 210, "label": "Auditorium roof", "sub": "(open to below)", "kind": "open" },
-      { "x": 540, "y": 580, "w": 104, "h": 30, "label": "↓ EXIT", "kind": "exit" },
-      { "x": 30, "y": 600, "w": 140, "h": 80, "label": "Art Store", "kind": "office" },
-      { "x": 180, "y": 600, "w": 110, "h": 80, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_aud_3" },
-      { "x": 300, "y": 600, "w": 150, "h": 80, "label": "320", "sub": "Art", "kind": "room" },
-      { "x": 460, "y": 600, "w": 150, "h": 80, "label": "319", "sub": "Art", "kind": "room" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 120,
+        "h": 116,
+        "label": "Exam Store",
+        "kind": "office"
+      },
+      {
+        "x": 158,
+        "y": 88,
+        "w": 120,
+        "h": 116,
+        "label": "321",
+        "sub": "Design",
+        "kind": "room"
+      },
+      {
+        "x": 286,
+        "y": 88,
+        "w": 120,
+        "h": 116,
+        "label": "322",
+        "sub": "Computer Lab 1",
+        "kind": "room"
+      },
+      {
+        "x": 414,
+        "y": 88,
+        "w": 120,
+        "h": 116,
+        "label": "323",
+        "sub": "Computer Lab 2",
+        "kind": "room"
+      },
+      {
+        "x": 542,
+        "y": 88,
+        "w": 120,
+        "h": 116,
+        "label": "324",
+        "sub": "Design",
+        "kind": "room"
+      },
+      {
+        "x": 670,
+        "y": 88,
+        "w": 120,
+        "h": 116,
+        "label": "325",
+        "sub": "Design",
+        "kind": "room"
+      },
+      {
+        "x": 830,
+        "y": 88,
+        "w": 140,
+        "h": 70,
+        "label": "327",
+        "kind": "room"
+      },
+      {
+        "x": 830,
+        "y": 166,
+        "w": 140,
+        "h": 96,
+        "label": "Store",
+        "kind": "office"
+      },
+      {
+        "x": 158,
+        "y": 230,
+        "w": 110,
+        "h": 110,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_aud_3"
+      },
+      {
+        "x": 250,
+        "y": 360,
+        "w": 430,
+        "h": 210,
+        "label": "Art Display Open Area",
+        "kind": "landmark",
+        "node": "art_display"
+      },
+      {
+        "x": 700,
+        "y": 340,
+        "w": 90,
+        "h": 110,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 804,
+        "y": 300,
+        "w": 166,
+        "h": 270,
+        "label": "Auditorium roof",
+        "sub": "(open to below)",
+        "kind": "open"
+      },
+      {
+        "x": 630,
+        "y": 574,
+        "w": 104,
+        "h": 28,
+        "label": "↓ EXIT",
+        "kind": "exit"
+      },
+      {
+        "x": 30,
+        "y": 600,
+        "w": 140,
+        "h": 80,
+        "label": "Art Store",
+        "kind": "office"
+      },
+      {
+        "x": 180,
+        "y": 600,
+        "w": 110,
+        "h": 80,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_aud_3"
+      },
+      {
+        "x": 300,
+        "y": 600,
+        "w": 150,
+        "h": 80,
+        "label": "320",
+        "sub": "Art",
+        "kind": "room"
+      },
+      {
+        "x": 460,
+        "y": 600,
+        "w": 150,
+        "h": 80,
+        "label": "319",
+        "sub": "Art",
+        "kind": "room"
+      }
     ]
   },
-
   "bridge-third": {
-    "title": "Third Floor — Bridge", "subtitle": "Secondary · New Classrooms 2025/26",
+    "title": "Third Floor — Bridge",
+    "subtitle": "Secondary · New Classrooms 2025/26",
     "note": "Schematic wayfinding guide — not to scale",
-    "w": 1000, "h": 660, "compass": true,
+    "w": 1000,
+    "h": 660,
+    "compass": true,
     "cells": [
-      { "x": 30, "y": 88, "w": 112, "h": 118, "label": "328", "kind": "room" },
-      { "x": 150, "y": 88, "w": 112, "h": 118, "label": "329", "kind": "room" },
-      { "x": 270, "y": 88, "w": 112, "h": 118, "label": "330", "kind": "room" },
-      { "x": 390, "y": 88, "w": 112, "h": 118, "label": "331", "sub": "Staff Room", "kind": "room" },
-      { "x": 510, "y": 88, "w": 112, "h": 118, "label": "332", "kind": "room" },
-      { "x": 630, "y": 88, "w": 112, "h": 118, "label": "333", "kind": "room" },
-      { "x": 750, "y": 88, "w": 84, "h": 118, "label": "334", "kind": "room" },
-      { "x": 842, "y": 88, "w": 128, "h": 118, "label": "Stairs", "kind": "stairs", "node": "stairs_bridge_3" },
-      { "x": 820, "y": 214, "w": 150, "h": 80, "label": "Head of Secondary", "kind": "office" },
-      { "x": 820, "y": 300, "w": 48, "h": 56, "label": "SLT 1", "kind": "office" },
-      { "x": 872, "y": 300, "w": 48, "h": 56, "label": "PA", "kind": "office" },
-      { "x": 924, "y": 300, "w": 46, "h": 56, "label": "SLT 2", "kind": "office" },
-      { "x": 820, "y": 362, "w": 70, "h": 56, "label": "SLT 3", "kind": "office" },
-      { "x": 895, "y": 362, "w": 75, "h": 56, "label": "Electrical", "kind": "office" },
-      { "x": 820, "y": 426, "w": 70, "h": 100, "label": "Stairs", "kind": "stairs" },
-      { "x": 895, "y": 426, "w": 75, "h": 100, "label": "Lift", "kind": "lift" },
-      { "x": 820, "y": 536, "w": 150, "h": 80, "label": "WC", "sub": "Toilets", "kind": "toilet", "node": "wc_bridge_3" },
-      { "x": 30, "y": 214, "w": 150, "h": 150, "label": "340", "sub": "Flexible Space", "kind": "room" },
-      { "x": 30, "y": 372, "w": 150, "h": 150, "label": "339", "sub": "Flexible Space", "kind": "room" },
-      { "x": 250, "y": 230, "w": 520, "h": 300, "label": "Open to below", "kind": "open" },
-      { "x": 200, "y": 536, "w": 128, "h": 92, "label": "338", "kind": "room" },
-      { "x": 332, "y": 536, "w": 128, "h": 92, "label": "337", "kind": "room" },
-      { "x": 464, "y": 536, "w": 128, "h": 92, "label": "336", "kind": "room" },
-      { "x": 596, "y": 536, "w": 128, "h": 92, "label": "335", "kind": "room" },
-      { "x": 728, "y": 536, "w": 84, "h": 92, "label": "WC", "kind": "toilet" }
+      {
+        "x": 30,
+        "y": 88,
+        "w": 112,
+        "h": 118,
+        "label": "328",
+        "kind": "room"
+      },
+      {
+        "x": 150,
+        "y": 88,
+        "w": 112,
+        "h": 118,
+        "label": "329",
+        "kind": "room"
+      },
+      {
+        "x": 270,
+        "y": 88,
+        "w": 112,
+        "h": 118,
+        "label": "330",
+        "kind": "room"
+      },
+      {
+        "x": 390,
+        "y": 88,
+        "w": 112,
+        "h": 118,
+        "label": "331",
+        "sub": "Staff Room",
+        "kind": "room"
+      },
+      {
+        "x": 510,
+        "y": 88,
+        "w": 112,
+        "h": 118,
+        "label": "332",
+        "kind": "room"
+      },
+      {
+        "x": 630,
+        "y": 88,
+        "w": 112,
+        "h": 118,
+        "label": "333",
+        "kind": "room"
+      },
+      {
+        "x": 750,
+        "y": 88,
+        "w": 84,
+        "h": 118,
+        "label": "334",
+        "kind": "room"
+      },
+      {
+        "x": 842,
+        "y": 88,
+        "w": 128,
+        "h": 118,
+        "label": "Stairs",
+        "kind": "stairs",
+        "node": "stairs_bridge_3"
+      },
+      {
+        "x": 820,
+        "y": 214,
+        "w": 150,
+        "h": 80,
+        "label": "Head of Secondary",
+        "kind": "office"
+      },
+      {
+        "x": 820,
+        "y": 300,
+        "w": 48,
+        "h": 56,
+        "label": "SLT 1",
+        "kind": "office"
+      },
+      {
+        "x": 872,
+        "y": 300,
+        "w": 48,
+        "h": 56,
+        "label": "PA",
+        "kind": "office"
+      },
+      {
+        "x": 924,
+        "y": 300,
+        "w": 46,
+        "h": 56,
+        "label": "SLT 2",
+        "kind": "office"
+      },
+      {
+        "x": 820,
+        "y": 362,
+        "w": 70,
+        "h": 56,
+        "label": "SLT 3",
+        "kind": "office"
+      },
+      {
+        "x": 895,
+        "y": 362,
+        "w": 75,
+        "h": 56,
+        "label": "Electrical",
+        "kind": "office"
+      },
+      {
+        "x": 820,
+        "y": 426,
+        "w": 70,
+        "h": 100,
+        "label": "Stairs",
+        "kind": "stairs"
+      },
+      {
+        "x": 895,
+        "y": 426,
+        "w": 75,
+        "h": 100,
+        "label": "Lift",
+        "kind": "lift"
+      },
+      {
+        "x": 820,
+        "y": 536,
+        "w": 150,
+        "h": 80,
+        "label": "WC",
+        "sub": "Toilets",
+        "kind": "toilet",
+        "node": "wc_bridge_3"
+      },
+      {
+        "x": 30,
+        "y": 214,
+        "w": 150,
+        "h": 150,
+        "label": "340",
+        "sub": "Flexible Space",
+        "kind": "room"
+      },
+      {
+        "x": 30,
+        "y": 372,
+        "w": 150,
+        "h": 150,
+        "label": "339",
+        "sub": "Flexible Space",
+        "kind": "room"
+      },
+      {
+        "x": 250,
+        "y": 230,
+        "w": 520,
+        "h": 300,
+        "label": "Open to below",
+        "kind": "open"
+      },
+      {
+        "x": 200,
+        "y": 536,
+        "w": 128,
+        "h": 92,
+        "label": "338",
+        "kind": "room"
+      },
+      {
+        "x": 332,
+        "y": 536,
+        "w": 128,
+        "h": 92,
+        "label": "337",
+        "kind": "room"
+      },
+      {
+        "x": 464,
+        "y": 536,
+        "w": 128,
+        "h": 92,
+        "label": "336",
+        "kind": "room"
+      },
+      {
+        "x": 596,
+        "y": 536,
+        "w": 128,
+        "h": 92,
+        "label": "335",
+        "kind": "room"
+      },
+      {
+        "x": 728,
+        "y": 536,
+        "w": 84,
+        "h": 92,
+        "label": "WC",
+        "kind": "toilet"
+      }
     ]
   }
 }
