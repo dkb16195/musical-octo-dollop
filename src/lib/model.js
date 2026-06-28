@@ -121,9 +121,28 @@ export function relTime(at, now) {
 }
 
 /* ----------------------------- money ----------------------------- */
+// Per-household display currency. Values are stored as plain numbers; only the
+// glyph changes. `setCurrency` is called once per render from <App> so every
+// money() in that render uses the household's chosen currency.
+export const CURRENCIES = {
+  USD: { symbol: '$',    label: 'US Dollar' },
+  AED: { symbol: 'AED ', label: 'UAE Dirham' },
+  EUR: { symbol: '€',    label: 'Euro' },
+  GBP: { symbol: '£',    label: 'British Pound' },
+  SAR: { symbol: 'SAR ', label: 'Saudi Riyal' },
+  INR: { symbol: '₹',    label: 'Indian Rupee' },
+  CAD: { symbol: 'CA$',  label: 'Canadian Dollar' },
+  AUD: { symbol: 'A$',   label: 'Australian Dollar' },
+};
+let _currency = 'USD';
+export const setCurrency = (c) => { if (CURRENCIES[c]) _currency = c; };
+export const getCurrency = () => _currency;
+
 export const money = (n) => {
+  const c = CURRENCIES[_currency] || CURRENCIES.USD;
   const v = Math.round(n * 100) / 100;
-  return '$' + (Number.isInteger(v) ? v.toLocaleString() : v.toLocaleString(undefined, { minimumFractionDigits:2, maximumFractionDigits:2 }));
+  const num = Number.isInteger(v) ? v.toLocaleString() : v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return c.symbol + num;
 };
 export const annualPotential = (b) => b.cadence === 'perk' ? 0 : b.value * CADENCES[b.cadence].n;
 
