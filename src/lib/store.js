@@ -35,6 +35,7 @@ export function useHousehold(code) {
   const [cards, setCards] = useState([]);
   const [checks, setChecks] = useState({});
   const [users, setUsers] = useState(['Me', 'Partner']);
+  const [currency, setCurrencyState] = useState('USD');
   const [status, setStatus] = useState('loading'); // loading | ready | error
   const cardsRef = useRef(cards);
   cardsRef.current = cards;
@@ -50,7 +51,7 @@ export function useHousehold(code) {
         const [c, k, s] = await Promise.all([
           supabase.from('cards').select('*').eq('code', code),
           supabase.from('checks').select('*').eq('code', code),
-          supabase.from('settings').select('users').eq('code', code).maybeSingle(),
+          supabase.from('settings').select('*').eq('code', code).maybeSingle(),
         ]);
         if (!alive) return;
         setCards((c.data || []).map(rowToCard).sort(sortCards));
@@ -58,6 +59,11 @@ export function useHousehold(code) {
         (k.data || []).forEach(r => { cm[r.k] = { by: r.checked_by, at: Number(r.checked_at) }; });
         setChecks(cm);
         if (s.data?.users) setUsers(s.data.users);
+        // Currency: prefer the synced household value; fall back to this
+        // device's last choice so the preference survives without the column.
+        const localCur = localStorage.getItem('perked.cur.' + code);
+        if (s.data?.currency) { setCurrencyState(s.data.currency); localStorage.setItem('perked.cur.' + code, s.data.currency); }
+        else if (localCur) setCurrencyState(localCur);
         setStatus('ready');
       } catch (e) {
         console.error(e);
@@ -90,6 +96,7 @@ export function useHousehold(code) {
       })
       .on('postgres_changes', { event: '*', schema: 'public', table: 'settings', filter: `code=eq.${code}` }, (p) => {
         if (p.new?.users) setUsers(p.new.users);
+        if (p.new?.currency) setCurrencyState(p.new.currency);
       })
       .subscribe();
     return () => { supabase.removeChannel(ch); };
@@ -143,5 +150,13 @@ export function useHousehold(code) {
       .then(({ error }) => error && console.error(error));
   }, [code]);
 
-  return { cards, checks, users, status, addCards, updateCard, deleteCard, toggle, saveUsers };
+  const saveCurrency = useCallback((cur) => {
+    setCurrencyState(cur);
+    localStorage.setItem('perked.cur.' + code, cur); // device-local: always works
+    // Best-effort cross-device sync; harmlessly no-ops if the column is absent.
+    supabase.from('settings').upsert({ code, currency: cur, updated_at: new Date().toISOString() }, { onConflict: 'code' })
+      .then(({ error }) => error && console.warn('currency sync skipped:', error.message));
+  }, [code]);
+
+  return { cards, checks, users, currency, status, addCards, updateCard, deleteCard, toggle, saveUsers, saveCurrency };
 }

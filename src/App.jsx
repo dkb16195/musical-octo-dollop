@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import {
-  CADENCES, CARD_COLORS, TEMPLATES, MONTHS_FULL, newBenefit,
-  colorCss, lightColor, uid, money, annualPotential,
+  CADENCES, CARD_COLORS, CURRENCIES, TEMPLATES, MONTHS_FULL, newBenefit,
+  colorCss, lightColor, uid, money, annualPotential, setCurrency as applyCurrency,
   periodsFor, currentPeriod, annualCycle, fmtDate, fmtShortDate, relTime,
   makeCode, normCode,
 } from './lib/model.js';
@@ -459,15 +459,23 @@ function Confirm({ text, onYes, onNo }) {
   );
 }
 
-function NameEditor({ users, saveUsers, onClose }) {
+function NameEditor({ users, currency, saveUsers, saveCurrency, onClose }) {
   const [a, setA] = useState(users[0]); const [b, setB] = useState(users[1]);
+  const [cur, setCur] = useState(currency);
   return (
-    <Modal title="Who's using this?" onClose={onClose}
-      footer={<button onClick={() => { saveUsers([a.trim() || 'Me', b.trim() || 'Partner']); onClose(); }} className="w-full bg-blue-500 text-white font-bold rounded-xl py-3">Save names</button>}>
+    <Modal title="Household settings" onClose={onClose}
+      footer={<button onClick={() => { saveUsers([a.trim() || 'Me', b.trim() || 'Partner']); saveCurrency(cur); onClose(); }} className="w-full bg-blue-500 text-white font-bold rounded-xl py-3">Save</button>}>
       <p className="text-sm text-gray-500 mb-4 px-1">Tap your avatar before checking things off so you both know who claimed what.</p>
       <Field label="Person 1"><input value={a} onChange={e => setA(e.target.value)} className="w-full bg-gray-100 rounded-xl px-3.5 py-2.5 outline-none font-medium focus:ring-2 ring-blue-400" /></Field>
       <div className="h-3" />
       <Field label="Person 2"><input value={b} onChange={e => setB(e.target.value)} className="w-full bg-gray-100 rounded-xl px-3.5 py-2.5 outline-none font-medium focus:ring-2 ring-blue-400" /></Field>
+      <div className="h-4" />
+      <Field label="Currency">
+        <select value={cur} onChange={e => setCur(e.target.value)} className="w-full bg-gray-100 rounded-xl px-3.5 py-2.5 outline-none font-medium text-gray-900 focus:ring-2 ring-blue-400">
+          {Object.entries(CURRENCIES).map(([k, v]) => <option key={k} value={k}>{k} · {v.label} ({v.symbol.trim()})</option>)}
+        </select>
+        <p className="text-[11.5px] text-gray-400 mt-1 px-1">Applies to every amount across the app. Values aren’t converted — only the symbol changes.</p>
+      </Field>
     </Modal>
   );
 }
@@ -590,7 +598,8 @@ export default function App() {
 
   const now = useMemo(() => new Date(), []);
   const hh = useHousehold(code);
-  const { cards, checks, users, status, addCards, updateCard, deleteCard, toggle, saveUsers } = hh;
+  const { cards, checks, users, currency, status, addCards, updateCard, deleteCard, toggle, saveUsers, saveCurrency } = hh;
+  applyCurrency(currency); // set the display currency for every money() in this render
 
   useEffect(() => { if (code) localStorage.setItem('perked.code', code); }, [code]);
   useEffect(() => { localStorage.setItem('perked.me', String(me)); }, [me]);
@@ -666,7 +675,7 @@ export default function App() {
 
       {editor && <CardEditor initial={editor.initial} onSave={saveCards} onClose={() => setEditor(null)} />}
       {confirm && <Confirm text={`Delete "${confirm.name}"? Its checked benefits will be removed.`} onYes={() => removeCard(confirm)} onNo={() => setConfirm(null)} />}
-      {editingNames && <NameEditor users={users} saveUsers={saveUsers} onClose={() => setEditingNames(false)} />}
+      {editingNames && <NameEditor users={users} currency={currency} saveUsers={saveUsers} saveCurrency={saveCurrency} onClose={() => setEditingNames(false)} />}
       {sharing && <ShareSheet code={code} onLeave={leave} onClose={() => setSharing(false)} />}
     </div>
   );
